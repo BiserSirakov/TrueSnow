@@ -7,13 +7,22 @@
     using System.Web.Mvc;
 
     using AutoMapper;
+
     using Data.Models;
+    using Infrastructure;
     using Infrastructure.Mapping;
     using Services.Web;
     using Services.Web.Contracts;
 
     public class ArticleViewModel : IMapFrom<Article>, IHaveCustomMappings
     {
+        private ISanitizer sanitizer;
+
+        public ArticleViewModel()
+        {
+            this.sanitizer = new HtmlSanitizerAdapter();
+        }
+
         public int Id { get; set; }
 
         [Required]
@@ -26,7 +35,14 @@
         [AllowHtml]
         public string Content { get; set; }
 
-        public string ContentSanitized { get; set; }
+        [AllowHtml]
+        public string ContentSanitized
+        {
+            get
+            {
+                return this.sanitizer.Sanitize(this.Content);
+            }
+        }
 
         public DateTime CreatedOn { get; set; }
 

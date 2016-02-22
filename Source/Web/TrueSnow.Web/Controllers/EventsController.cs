@@ -59,7 +59,7 @@
                 var eventToAdd = new Event
                 {
                     Title = model.Title,
-                    Description = model.Description,
+                    Description = HttpUtility.HtmlDecode(model.Description),
                     CreatorId = this.User.Identity.GetUserId()
                 };
 

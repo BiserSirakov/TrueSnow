@@ -8,6 +8,6 @@
     <div>
         <h1>@currentEvent.Title</h1>
         <img src="~/File/@currentEvent.Photo.Id" alt="photo" class="img-responsive" />
-        <p>@currentEvent.DescriptionSanitized</p>
+        @Html.Raw(currentEvent.DescriptionSanitized)
     </div>
 }

@@ -9,6 +9,6 @@
         <img src="~/File/@article.Photo.Id" alt="photo" class="img-responsive" />
         <p>@article.Creator.FirstName @article.Creator.LastName @article.CreatedOn </p>
         <a href="@article.Url">@article.Title</a>
-        <p>@article.Content</p>
+        <p>@Html.Raw(article.ContentSanitized)</p>
     </div>
 }

@@ -59,7 +59,7 @@
                 var articleToAdd = new Article
                 {
                     Title = model.Title,
-                    Content = model.Content,
+                    Content = HttpUtility.HtmlDecode(model.Content),
                     CreatorId = this.User.Identity.GetUserId()
                 };
 

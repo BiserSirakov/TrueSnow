@@ -1,4 +1,17 @@
-﻿.search-container a:hover {
+﻿.anchor-hover:hover {
+    text-decoration: none;
+}
+
+.panel-title a:hover {
+    text-decoration: none;
+}
+
+.hoverable:hover {
+    color: #4C90B7;
+    text-decoration: none;
+}
+
+.search-container a:hover {
     color: #4C90B7;
     text-decoration: none;
 }

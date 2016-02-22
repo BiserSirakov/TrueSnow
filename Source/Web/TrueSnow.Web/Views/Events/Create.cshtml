@@ -7,24 +7,16 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary("", new { @class = "text-danger" })
 
-    <div class="form-group">
+    <div class="form-group" style="margin: 10px 0;">
         @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Title" })
     </div>
 
     @(Html.Kendo().Editor()
       .Name("Description")
       .HtmlAttributes(new { style = "height:440px" })
-      .ImageBrowser(imageBrowser => imageBrowser
-          .Image("~/Content/UserFiles/Images/{0}")
-          .Read("Read", "ImageBrowser")
-          .Create("Create", "ImageBrowser")
-          .Destroy("Destroy", "ImageBrowser")
-          .Upload("Upload", "ImageBrowser")
-          .Thumbnail("Thumbnail", "ImageBrowser")
-      )
     )
 
-    <div class="form-group">
+    <div class="form-group" style="margin: 10px 0;">
         <input class="" type="file" placeholder="Photo" id="Photo" name="upload" style="background-color: #4C90B7" />
     </div>
 

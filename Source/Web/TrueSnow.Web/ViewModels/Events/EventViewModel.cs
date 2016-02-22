@@ -1,9 +1,10 @@
 ﻿namespace TrueSnow.Web.Models.Events
 {
+    using System;
     using System.Collections.Generic;
     using System.Web.Mvc;
+
     using Data.Models;
-    using Ganss.XSS;
     using Infrastructure;
     using Infrastructure.Mapping;
     using Services.Web;
@@ -25,6 +26,7 @@
         [AllowHtml]
         public string Description { get; set; }
 
+        [AllowHtml]
         public string DescriptionSanitized
         {
             get
@@ -34,6 +36,8 @@
         }
 
         public User Creator { get; set; }
+
+        public DateTime CreatedOn { get; set; }
 
         public File Photo { get; set; }
 

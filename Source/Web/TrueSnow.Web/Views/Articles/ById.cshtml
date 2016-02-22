@@ -1,6 +1,11 @@
 ﻿@model ArticleViewModel
 
-<h1>@Model.Title</h1>
-<img src="~/File/@Model.Photo.Id" alt="photo" class="img-responsive" />
-
-<p>@Model.Content</p>
+<div style="margin: 0 auto; max-width: 600px;">
+    <h1>@Model.Title</h1>
+    <p>
+        @Model.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US")) by
+        <a class="hoverable" href="~/Profile/@Model.Creator.Id">@Model.Creator.FirstName @Model.Creator.LastName</a>
+    </p>
+    <img src="~/File/@Model.Photo.Id" alt="photo" class="img-responsive" style="margin: 30px auto" />
+    <p style="text-align: justify; margin-bottom: 40px;">@Html.Raw(Model.ContentSanitized)</p>
+</div>

@@ -1,7 +1,11 @@
 ﻿@model EventViewModel
 
 <div style="margin: 0 auto; max-width: 600px;">
-    <h1 class="text-center">@Model.Title</h1>
+    <h1>@Model.Title</h1>
+    <p>
+        @Model.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US")) by
+        <a class="hoverable" href="~/Profile/@Model.Creator.Id">@Model.Creator.FirstName @Model.Creator.LastName</a>
+    </p>
     <img src="~/File/@Model.Photo.Id" alt="photo" class="img-responsive" style="margin: 30px auto" />
-    <p style="text-align: justify; margin-bottom: 40px;">@Model.DescriptionSanitized</p>
+    <p style="text-align: justify; margin-bottom: 40px;">@Html.Raw(Model.DescriptionSanitized)</p>
 </div>
