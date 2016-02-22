@@ -2,11 +2,15 @@
 {
     using System.Linq;
     using System.Web.Mvc;
+
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
+
+    using Infrastructure.Constants;
     using Services.Data.Contracts;
     using ViewModels;
 
+    [Authorize(Roles = IdentityRoles.Administrator)]
     public class AdminArticlesController : Controller
     {
         private readonly IArticlesService articles;

@@ -1,7 +1,7 @@
-﻿using System.Web.Mvc;
-
-namespace TrueSnow.Web.Areas.Administration
+﻿namespace TrueSnow.Web.Areas.Administration
 {
+    using System.Web.Mvc;
+
     public class AdministrationAreaRegistration : AreaRegistration
     {
         public override string AreaName
@@ -15,14 +15,9 @@ namespace TrueSnow.Web.Areas.Administration
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
-                "Administration_users",
-                "Administration/Users",
-                new { controller = "AdminUsers", action = "Index" });
-
-            context.MapRoute(
-                "Administration_posts",
-                "Administration/Posts",
-                new { controller = "AdminPosts", action = "Index" });
+                "Administration_articles",
+                "Administration/Articles",
+                new { controller = "AdminArticles", action = "Index" });
 
             context.MapRoute(
                 "Administration_comments",
@@ -30,14 +25,19 @@ namespace TrueSnow.Web.Areas.Administration
                 new { controller = "AdminComments", action = "Index" });
 
             context.MapRoute(
-                "Administration_articles",
-                "Administration/Articles",
-                new { controller = "AdminArticles", action = "Index" });
-
-            context.MapRoute(
                 "Administration_events",
                 "Administration/Events",
                 new { controller = "AdminEvents", action = "Index" });
+
+            context.MapRoute(
+                "Administration_posts",
+                "Administration/Posts",
+                new { controller = "AdminPosts", action = "Index" });
+
+            context.MapRoute(
+                "Administration_users",
+                "Administration/Users",
+                new { controller = "AdminUsers", action = "Index" });
 
             context.MapRoute(
                 "Administration_default",

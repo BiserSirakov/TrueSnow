@@ -1,6 +1,7 @@
 ﻿namespace TrueSnow.Services.Data
 {
     using System.Linq;
+
     using TrueSnow.Data.Common;
     using TrueSnow.Data.Models;
     using TrueSnow.Services.Data.Contracts;
@@ -30,8 +31,7 @@
         {
             return this.likes
                 .All()
-                .Where(l => l.PostId == id)
-                .Where(l => !l.IsDeleted);
+                .Where(l => l.PostId == id && !l.IsDeleted);
         }
 
         public Like GetByUserAndPostId(string userId, int postId)

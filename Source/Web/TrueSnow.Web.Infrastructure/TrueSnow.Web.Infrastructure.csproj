@@ -68,7 +68,6 @@
     <Compile Include="Constants\Assemblies.cs" />
     <Compile Include="Constants\IdentityRoles.cs" />
     <Compile Include="HtmlSanitizerAdapter.cs" />
-    <Compile Include="ImageHelper.cs" />
     <Compile Include="ISanitizer.cs" />
     <Compile Include="Mapping\AutoMapperConfig.cs" />
     <Compile Include="Mapping\IHaveCustomMappings.cs" />

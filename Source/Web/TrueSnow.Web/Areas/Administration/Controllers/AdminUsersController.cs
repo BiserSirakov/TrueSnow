@@ -1,19 +1,19 @@
 ﻿namespace TrueSnow.Web.Areas.Administration.Controllers
 {
-    using System.Linq;
     using System.Web.Mvc;
+
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
+    using Microsoft.AspNet.Identity;
+
+    using Infrastructure.Constants;
     using TrueSnow.Data.Models;
     using ViewModels;
-    using Microsoft.AspNet.Identity;
-    using Services.Data.Contracts;
 
+    [Authorize(Roles = IdentityRoles.Administrator)]
     public class AdminUsersController : Controller
     {
         private readonly UserManager<User> userManager;
-        private readonly IPostsService posts;
-        private readonly ICommentsService comments;
 
         public AdminUsersController(UserManager<User> userManager)
         {
@@ -27,8 +27,7 @@
 
         public ActionResult Users_Read([DataSourceRequest]DataSourceRequest request)
         {
-            IQueryable<User> users = this.userManager.Users;
-            DataSourceResult result = users
+            DataSourceResult result = this.userManager.Users
                 .ToDataSourceResult(request, user => new AdminUserViewModel
                 {
                     Id = user.Id,
@@ -43,9 +42,15 @@
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Users_Update([DataSourceRequest]DataSourceRequest request, AdminUserViewModel user)
         {
-            var userToUpdate = this.userManager.FindById(user.Id);
-            userToUpdate.FirstName = user.FirstName;
-            userToUpdate.LastName = user.LastName;
+            if (this.ModelState.IsValid)
+            {
+                var userToUpdate = this.userManager.FindById(user.Id);
+                userToUpdate.FirstName = user.FirstName;
+                userToUpdate.LastName = user.LastName;
+                userToUpdate.Email = user.Email;
+
+                var result = this.userManager.Update(userToUpdate);
+            }
 
             return this.Json(new[] { user }.ToDataSourceResult(request, this.ModelState));
         }
@@ -53,31 +58,12 @@
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Users_Destroy([DataSourceRequest]DataSourceRequest request, AdminUserViewModel user)
         {
-            var userToDelete = this.userManager.FindById(user.Id);
-            var logins = userToDelete.Logins;
-
-            foreach (var login in logins)
+            if (this.ModelState.IsValid)
             {
-                var loginResult = this.userManager.RemoveLogin(login.UserId, new UserLoginInfo(login.LoginProvider, login.ProviderKey));
-            }
+                var userToDelete = this.userManager.FindById(user.Id);
+                var removeFromRole = this.userManager.RemoveFromRole(user.Id, "User");
 
-            var userRoles = this.userManager.GetRoles(userToDelete.Id);
-
-            if (userRoles.Count() > 0)
-            {
-                foreach (var item in userRoles.ToList())
-                {
-                    var roleResult = this.userManager.RemoveFromRole(userToDelete.Id, "User"); // Only Users can be deleted (not Admins)
-                }
-            }
-
-            var result = this.userManager.Delete(userToDelete);
-            if (result.Succeeded)
-            {
-                return this.RedirectToAction("Index", "Home");
-            }
-            else
-            {
+                var result = this.userManager.Delete(userToDelete);
             }
 
             return this.Json(new[] { user }.ToDataSourceResult(request, this.ModelState));

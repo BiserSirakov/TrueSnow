@@ -7,16 +7,9 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/kendo")
     @Scripts.Render("~/bundles/jquery")
-    <style>
-        .k-grid td {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 100px;
-        }
-    </style>
     <script src="~/Scripts/jquery.signalR-2.2.0.js"></script>
     <script src="~/signalr/hubs" type="text/javascript"></script>
-    <meta name="description" content="Social network for true snowboarders" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 </head>
 <body>
     <img src="~/Content/Images/logo.png" alt="Logo" class="logo img-responsive img-circle" />
@@ -94,6 +87,5 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/kendo")
     @RenderSection("scripts", required: false)
-    <script type="text/javascript" src="~/Scripts/site.js"></script>
 </body>
 </html>

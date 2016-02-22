@@ -4,7 +4,7 @@ namespace TrueSnow.Data.Migrations
     using System.Linq;
 
     using Microsoft.AspNet.Identity.EntityFramework;
-    using TrueSnow.Web.Infrastructure.Constants;
+    using Web.Infrastructure.Constants;
 
     public sealed class Configuration : DbMigrationsConfiguration<TrueSnowDbContext>
     {

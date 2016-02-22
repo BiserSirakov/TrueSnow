@@ -1,9 +1,6 @@
 ﻿namespace TrueSnow.Web.Areas.Administration.ViewModels
 {
-    using TrueSnow.Data.Models;
-    using TrueSnow.Web.Infrastructure.Mapping;
-
-    public class AdminPostViewModel : IMapFrom<Post>
+    public class AdminPostViewModel
     {
         public int Id { get; set; }
 

@@ -1,7 +1,6 @@
 ﻿namespace TrueSnow.Web.Hub
 {
     using System.Linq;
-    using Config;
     using Data;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.SignalR;

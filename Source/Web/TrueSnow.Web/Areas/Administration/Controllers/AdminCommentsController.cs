@@ -1,11 +1,15 @@
 ﻿namespace TrueSnow.Web.Areas.Administration.Controllers
 {
     using System.Web.Mvc;
+
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
-    using ViewModels;
-    using Services.Data.Contracts;
 
+    using Infrastructure.Constants;
+    using Services.Data.Contracts;
+    using ViewModels;
+
+    [Authorize(Roles = IdentityRoles.Administrator)]
     public class AdminCommentsController : Controller
     {
         private readonly ICommentsService comments;

@@ -6,9 +6,11 @@
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
 
+    using Infrastructure.Constants;
     using TrueSnow.Services.Data.Contracts;
     using TrueSnow.Web.Areas.Administration.ViewModels;
 
+    [Authorize(Roles = IdentityRoles.Administrator)]
     public class AdminEventsController : Controller
     {
         private readonly IEventsService events;

@@ -1,12 +1,16 @@
 ﻿namespace TrueSnow.Web.Areas.Administration.Controllers
 {
     using System.Web.Mvc;
-    using Data.Models;
+
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
-    using ViewModels;
-    using Services.Data.Contracts;
 
+    using Data.Models;
+    using Infrastructure.Constants;
+    using Services.Data.Contracts;
+    using ViewModels;
+
+    [Authorize(Roles = IdentityRoles.Administrator)]
     public class AdminPostsController : Controller
     {
         private readonly IPostsService posts;

@@ -1,9 +1,6 @@
 ﻿namespace TrueSnow.Web.Areas.Administration.ViewModels
 {
-    using Data.Models;
-    using TrueSnow.Web.Infrastructure.Mapping;
-
-    public class AdminCommentViewModel : IMapFrom<Comment>
+    public class AdminCommentViewModel
     {
         public int Id { get; set; }
 
