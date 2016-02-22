@@ -9,7 +9,6 @@
     using Infrastructure.Mapping;
     using Models.Users;
 
-    [Authorize]
     public class FollowsController : BaseController
     {
         private readonly UserManager<User> userManager;
@@ -35,11 +34,9 @@
             var userToFollow = this.userManager.FindById(id);
 
             this.CurrentUser.Following.Add(userToFollow);
-            this.userManager.Update(this.CurrentUser);
+            var result = this.userManager.Update(this.CurrentUser);
 
-            var allusers = this.CurrentUser.Following.ToList();
-
-            return this.View("../Profile/Index", this.Mapper.Map<ProfileViewModel>(userToFollow));
+            return this.Redirect(this.Request.UrlReferrer.ToString());
         }
 
         public ActionResult Unfollow(string id)
@@ -51,13 +48,12 @@
             this.CurrentUser.Following.Remove(userToUnfollow);
             this.userManager.Update(this.CurrentUser);
 
-            var allusers = this.CurrentUser.Following.ToList();
-
-            return this.View("../Profile/Index", this.Mapper.Map<ProfileViewModel>(userToUnfollow));
+            return this.Redirect(this.Request.UrlReferrer.ToString());
         }
 
         public ActionResult Following()
         {
+            // Not the CurrentUser but the user`s profile that is opened
             var currentUserId = this.TempData["userId"].ToString();
             var currentUser = this.userManager.FindById(currentUserId);
 
@@ -72,6 +68,7 @@
 
         public ActionResult Followers()
         {
+            // Not the CurrentUser but the user`s profile that is opened
             var currentUserId = this.TempData["userId"].ToString();
             var currentUser = this.userManager.FindById(currentUserId);
 

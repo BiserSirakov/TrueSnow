@@ -15,7 +15,6 @@
     using TrueSnow.Web.Models.Users;
     using TrueSnow.Web.Config;
 
-    [Authorize]
     public class AccountController : BaseController
     {
         // Used for XSRF protection when adding external logins

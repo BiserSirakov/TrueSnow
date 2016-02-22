@@ -7,6 +7,7 @@
     using Infrastructure.Mapping;
     using Services.Web.Contracts;
 
+    [Authorize]
     public abstract class BaseController : Controller
     {
         protected ICacheService Cache { get; set; }

@@ -1,15 +1,17 @@
 ﻿namespace TrueSnow.Web.Controllers
 {
     using System.Linq;
-    using Data.Models;
-    using Microsoft.AspNet.Identity;
     using System.Web.Mvc;
+
+    using Microsoft.AspNet.Identity;
+
+    using Data.Models;
     using Infrastructure.Mapping;
     using Models.Users;
-    using ViewModels.Search;
-    using Services.Data.Contracts;
     using Models.Articles;
     using Models.Events;
+    using Services.Data.Contracts;
+    using ViewModels.Search;
 
     public class SearchController : BaseController
     {

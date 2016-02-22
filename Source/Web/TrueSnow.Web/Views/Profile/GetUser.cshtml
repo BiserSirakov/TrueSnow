@@ -1,5 +1,4 @@
-﻿@using TrueSnow.Data.Models
-@model TrueSnow.Web.Models.Users.ProfileViewModel
+﻿@model ProfileViewModel
 
 <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="profile" aria-expanded="false" style="padding: 0;">
     <img src="~/File/@Model.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" class="img-responsive img-thumbnail" style="height: 40px; padding: 0" data-toggle="tooltip" data-placement="bottom" title="Profile" data-original-title="Profile" />

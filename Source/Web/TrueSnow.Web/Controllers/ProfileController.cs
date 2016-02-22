@@ -4,10 +4,9 @@
 
     using Microsoft.AspNet.Identity;
 
-    using Models.Users;
     using Data.Models;
+    using Models.Users;
 
-    [Authorize]
     public class ProfileController : BaseController
     {
         private readonly UserManager<User> userManager;
@@ -22,6 +21,7 @@
             this.TempData["userId"] = id;
             var user = this.userManager.FindById(id);
             var model = this.Mapper.Map<ProfileViewModel>(user);
+
             return this.View(model);
         }
 

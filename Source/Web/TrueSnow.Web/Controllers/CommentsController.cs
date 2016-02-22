@@ -1,19 +1,18 @@
 ﻿namespace TrueSnow.Web.Controllers
 {
-    using System;
+    using System.Globalization;
     using System.Linq;
     using System.Web.Mvc;
 
+    using Microsoft.AspNet.Identity;
+
+    using Infrastructure.Mapping;
     using Services.Data.Contracts;
     using TrueSnow.Data.Models;
     using ViewModels.Comments;
-    using Microsoft.AspNet.Identity;
-    using Infrastructure.Mapping;
-    using System.Globalization;
-    [Authorize]
+
     public class CommentsController : BaseController
     {
-        private const int CommentsPerPage = 5;
         private readonly ICommentsService comments;
         private readonly UserManager<User> userManager;
 

@@ -12,7 +12,6 @@
     using Models.Articles;
     using TrueSnow.Services.Data.Contracts;
 
-    [Authorize]
     public class ArticlesController : BaseController
     {
         private readonly IArticlesService articles;
@@ -83,7 +82,7 @@
 
                 this.articles.Add(articleToAdd);
 
-                return this.Redirect(this.Request.UrlReferrer.ToString());
+                return this.RedirectToAction("Index");
             }
 
             return this.View(model);

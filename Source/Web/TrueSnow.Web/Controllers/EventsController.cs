@@ -12,7 +12,6 @@
     using Models.Events;
     using TrueSnow.Services.Data.Contracts;
 
-    [Authorize]
     public class EventsController : BaseController
     {
         private readonly IEventsService events;
@@ -83,7 +82,7 @@
 
                 this.events.Add(eventToAdd);
 
-                return this.Redirect(this.Request.UrlReferrer.ToString());
+                return this.RedirectToAction("Index");
             }
 
             return this.View(model);

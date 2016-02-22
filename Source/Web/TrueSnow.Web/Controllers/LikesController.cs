@@ -5,10 +5,10 @@
     using System.Web.Mvc;
 
     using Microsoft.AspNet.Identity;
-    using Services.Data.Contracts;
-    using Data.Models;
 
-    [Authorize]
+    using Data.Models;
+    using Services.Data.Contracts;
+
     public class LikesController : BaseController
     {
         private readonly ILikesService likes;
@@ -21,11 +21,9 @@
         [HttpPost]
         public ActionResult Like(int postId)
         {
-            var currentUserId = this.User.Identity.GetUserId();
-
             var like = new Like
             {
-                CreatorId = currentUserId,
+                CreatorId = this.User.Identity.GetUserId(),
                 PostId = postId,
                 CreatedOn = DateTime.UtcNow
             };
@@ -41,7 +39,6 @@
         public ActionResult Unlike(int postId)
         {
             var currentUserId = this.User.Identity.GetUserId();
-
             var likeToRemove = this.likes.GetByUserAndPostId(currentUserId, postId);
 
             this.likes.Remove(likeToRemove);
