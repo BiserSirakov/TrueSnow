@@ -1,4 +1,8 @@
-﻿.anchor-hover:hover {
+﻿#screen-footer {
+    margin-top: 200px;
+}
+
+.anchor-hover:hover {
     text-decoration: none;
 }
 
@@ -299,7 +303,6 @@ footer {
     bottom: 0;
     width: 100%;
     height: 60px;
-    margin-top: 5em 0;
 }
 
     footer li {

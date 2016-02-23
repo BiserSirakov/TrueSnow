@@ -3,7 +3,7 @@
       .Columns(columns =>
       {
           columns.Bound(c => c.Title);
-          columns.Bound(c => c.Description).ClientTemplate(string.Format("{0}", "#= truncator(Description) #"));
+          columns.Bound(c => c.Description).ClientTemplate("#=Description#");
           columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
       })
       .Editable(editable => editable.Mode(GridEditMode.PopUp))
@@ -22,13 +22,3 @@
           .Destroy(destroy => destroy.Action("Events_Destroy", "AdminEvents"))
       )
 )
-
-<script type="text/javascript">
-   function truncator(value) {
-       if (value && value.length > 40) {
-           return value.substring(0, 40) + '...';
-       }
-
-       return value || '';
-   }
-</script>

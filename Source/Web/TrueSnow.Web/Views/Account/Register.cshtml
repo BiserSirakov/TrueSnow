@@ -45,9 +45,21 @@
                     @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm Password" })
                     @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                 </div>
-
+                
                 <div class="form-group" style="margin: 20px;">
-                    <input class="" id="Avatar" name="upload" type="file">
+                    <input class="form-control input-validation-error"
+                           id="Avatar"
+                           type="file"
+                           name="upload"
+                           style="background-color: #4C90B7"
+                           data-val="true"
+                           data-val-required="The Photo is required." />
+
+                    <span class="text-danger field-validation-error"
+                          data-valmsg-for="Avatar"
+                          data-valmsg-replace="true">
+                        <span id="Photo-error" class="">The Avatar uplode is required.</span>
+                    </span>
                 </div>
 
                 <hr />
