@@ -383,7 +383,13 @@
     <Content Include="Areas\Administration\Views\AdminComments\Index.cshtml" />
     <Content Include="Areas\Administration\Views\AdminArticles\Index.cshtml" />
     <Content Include="Areas\Administration\Views\AdminEvents\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\truesnow - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\truesnow - FTP %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\truesnow - FTP %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\truesnow - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\truesnow - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\truesnow - Web Deploy %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\truesnow - Web Deploy %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\truesnow - Web Deploy.pubxml" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\fileinput.min.js" />

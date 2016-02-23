@@ -42,7 +42,8 @@
             context.MapRoute(
                 "Administration_default",
                 "Administration/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional });
+                new { action = "Index", id = UrlParameter.Optional },
+                new[] { "TrueSnow.Web.Areas.Administration.Controllers" });
         }
     }
 }
