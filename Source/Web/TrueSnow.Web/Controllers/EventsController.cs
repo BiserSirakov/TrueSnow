@@ -80,9 +80,8 @@
                     }
 
                     eventToAdd.Photo = photo;
+                    this.events.Add(eventToAdd);
                 }
-
-                this.events.Add(eventToAdd);
 
                 return this.RedirectToAction("Index");
             }

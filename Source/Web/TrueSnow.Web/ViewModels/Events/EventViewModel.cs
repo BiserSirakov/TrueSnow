@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
     using AutoMapper;
@@ -23,9 +24,15 @@
 
         public int Id { get; set; }
 
+        [Required]
+        [StringLength(50, ErrorMessage = "The {0} must be between {2} and {1} characters long.", MinimumLength = 2)]
+        [Display(Name = "Title")]
         public string Title { get; set; }
 
         [AllowHtml]
+        [Required]
+        [MinLength(2, ErrorMessage = "The {0} must be at least {1} characters long.")]
+        [Display(Name = "Description")]
         public string Description { get; set; }
 
         [AllowHtml]
