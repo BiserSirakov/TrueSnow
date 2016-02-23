@@ -1,6 +1,7 @@
 ﻿namespace TrueSnow.Web.Controllers
 {
     using System.Web.Mvc;
+    using System.Web.UI;
 
     using TrueSnow.Services.Data.Contracts;
 
@@ -13,6 +14,7 @@
             this.files = files;
         }
 
+        [OutputCache(Duration = 10 * 60, Location = OutputCacheLocation.Client, VaryByParam = "id")]
         public ActionResult Index(int id)
         {
             var fileToRetrieve = this.files.GetById(id);
