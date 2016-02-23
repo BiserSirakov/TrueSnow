@@ -15,10 +15,12 @@
     public class EventsController : BaseController
     {
         private readonly IEventsService events;
+        private readonly UserManager<User> userManager;
 
-        public EventsController(IEventsService events)
+        public EventsController(IEventsService events, UserManager<User> userManager)
         {
             this.events = events;
+            this.userManager = userManager;
         }
 
         public ActionResult Index()
@@ -86,6 +88,21 @@
             }
 
             return this.View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Attend(int eventId)
+        {
+            if (this.ModelState.IsValid)
+            {
+                var eventToAttend = this.events.GetAll().FirstOrDefault(x => x.Id == eventId);
+                var currentUser = this.userManager.FindById(this.User.Identity.GetUserId());
+                eventToAttend.Attendants.Add(currentUser);
+                this.events.Save();
+            }
+
+            return this.Redirect(this.Request.UrlReferrer.ToString());
         }
     }
 }

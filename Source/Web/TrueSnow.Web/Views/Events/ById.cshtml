@@ -5,7 +5,15 @@
     <p>
         @Model.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US")) by
         <a class="hoverable" href="~/Profile/@Model.Creator.Id">@Model.Creator.FirstName @Model.Creator.LastName</a>
+        @using (Html.BeginForm("Attend", "Events", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="eventId" value="@Model.Id" />
+            <input type="submit" class="btn btn-primary" value="Attend" />
+        }
     </p>
     <img src="~/File/@Model.Photo.Id" alt="photo" class="img-responsive" style="margin: 30px auto" />
+
+    <span class="">Attendants: @Model.AttendantsCount</span>
     <p style="text-align: justify; margin-bottom: 40px;">@Html.Raw(Model.DescriptionSanitized)</p>
 </div>

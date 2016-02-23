@@ -4,13 +4,15 @@
     using System.Collections.Generic;
     using System.Web.Mvc;
 
+    using AutoMapper;
+
     using Data.Models;
     using Infrastructure;
     using Infrastructure.Mapping;
     using Services.Web;
     using Services.Web.Contracts;
 
-    public class EventViewModel : IMapFrom<Event>
+    public class EventViewModel : IMapFrom<Event>, IHaveCustomMappings
     {
         private ISanitizer sanitizer;
 
@@ -52,6 +54,14 @@
 
         public ICollection<User> Attendands { get; set; }
 
+        public int AttendantsCount { get; set; }
+
         public ICollection<Comment> Comments { get; set; }
+
+        public void CreateMappings(IMapperConfiguration configuration)
+        {
+            configuration.CreateMap<Event, EventViewModel>()
+                .ForMember(x => x.AttendantsCount, opts => opts.MapFrom(x => x.Attendants.Count));
+        }
     }
 }
