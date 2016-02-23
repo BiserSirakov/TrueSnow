@@ -1,4 +1,4 @@
-﻿@model TrueSnow.Web.Models.Users.RegisterViewModel
+﻿@model RegisterViewModel
 
 @{
     Layout = null;
@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - True Snow</title>
     @Styles.Render("~/Content/css")
-    <meta name="description" content="Social network for true snowboarders" />
 </head>
 <body>
     <div class="page-wrap">
@@ -68,17 +67,5 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#Avatar').fileinput({
-                language: 'bg',
-                uploadUrl: 'http://localhost:60702/Account/Register',
-                allowedFileExtensions: ['jpg', 'png', 'gif'],
-            });
-
-
-        });
-    </script>
 </body>
 </html>

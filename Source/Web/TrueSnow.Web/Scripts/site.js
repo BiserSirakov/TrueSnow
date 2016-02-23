@@ -76,6 +76,12 @@
         allowedFileExtensions: ['jpg', 'png', 'gif'],
     });
 
+    $('#Avatar').fileinput({
+        language: 'bg',
+        uploadUrl: 'http://localhost:60702/Account/Register',
+        allowedFileExtensions: ['jpg', 'png', 'gif'],
+    });
+
     $('#followLink').click(function (e) {
         e.preventDefault();
         var href = $(this).attr('href');

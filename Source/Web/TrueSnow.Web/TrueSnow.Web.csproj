@@ -265,7 +265,6 @@
     <Compile Include="Controllers\FollowsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LikesController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -285,24 +284,9 @@
     <Compile Include="ViewModels\Posts\PostByIdViewModel.cs" />
     <Compile Include="ViewModels\Posts\PostViewModel.cs" />
     <Compile Include="ViewModels\Search\SearchViewModel.cs" />
-    <Compile Include="ViewModels\Users\Manage\AddPhoneNumberViewModel.cs" />
-    <Compile Include="ViewModels\Users\Manage\ChangePasswordViewModel.cs" />
-    <Compile Include="ViewModels\Users\Manage\ConfigureTwoFactorViewModel.cs" />
-    <Compile Include="ViewModels\Users\Account\ExternalLoginConfirmationViewModel.cs" />
-    <Compile Include="ViewModels\Users\Account\ExternalLoginListViewModel.cs" />
-    <Compile Include="ViewModels\Users\Manage\FactorViewModel.cs" />
-    <Compile Include="ViewModels\Users\Account\ForgotPasswordViewModel.cs" />
-    <Compile Include="ViewModels\Users\Account\ForgotViewModel.cs" />
-    <Compile Include="ViewModels\Users\Manage\IndexViewModel.cs" />
     <Compile Include="ViewModels\Users\Account\LoginViewModel.cs" />
-    <Compile Include="ViewModels\Users\Manage\ManageLoginsViewModel.cs" />
     <Compile Include="ViewModels\Users\Profile\ProfileViewModel.cs" />
     <Compile Include="ViewModels\Users\Account\RegisterViewModel.cs" />
-    <Compile Include="ViewModels\Users\Account\ResetPasswordViewModel.cs" />
-    <Compile Include="ViewModels\Users\Account\SendCodeViewModel.cs" />
-    <Compile Include="ViewModels\Users\Manage\SetPasswordViewModel.cs" />
-    <Compile Include="ViewModels\Users\Account\VerifyCodeViewModel.cs" />
-    <Compile Include="ViewModels\Users\Manage\VerifyPhoneNumberViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -429,24 +413,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Posts\Index.cshtml" />
