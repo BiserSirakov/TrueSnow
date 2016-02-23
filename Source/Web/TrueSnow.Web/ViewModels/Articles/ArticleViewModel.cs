@@ -26,13 +26,14 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(3)]
-        [MaxLength(100)]
+        [StringLength(50, ErrorMessage = "The {0} must be between {2} and {1} characters long.", MinimumLength = 2)]
+        [Display(Name = "Title")]
         public string Title { get; set; }
 
-        [Required]
-        [MinLength(5)]
         [AllowHtml]
+        [Required]
+        [MinLength(2, ErrorMessage = "The {0} must be at least {1} characters long.")]
+        [Display(Name = "Content")]
         public string Content { get; set; }
 
         [AllowHtml]
