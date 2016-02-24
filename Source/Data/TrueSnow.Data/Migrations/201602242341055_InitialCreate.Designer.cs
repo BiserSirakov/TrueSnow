@@ -13,7 +13,7 @@ namespace TrueSnow.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201602231113167_InitialCreate"; }
+            get { return "201602242341055_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

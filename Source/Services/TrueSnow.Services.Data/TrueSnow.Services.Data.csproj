@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FD393A4B-F93D-4022-A4FD-320C35B4CA5F}</ProjectGuid>
+    <ProjectGuid>{11AA446E-7FDB-4007-9FB5-14CD27812E9E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TrueSnow.Services.Data</RootNamespace>
@@ -20,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>TrueSnow.Services.Data.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,7 +28,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>TrueSnow.Services.Data.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -58,31 +56,17 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Data\TrueSnow.Data.Common\TrueSnow.Data.Common.csproj">
-      <Project>{3f2dfbbe-1e54-4de3-821b-3824517cda0a}</Project>
+      <Project>{eac67b48-1909-4889-9e57-bd67f11cd885}</Project>
       <Name>TrueSnow.Data.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Data\TrueSnow.Data.Models\TrueSnow.Data.Models.csproj">
-      <Project>{3c8217b5-1fe1-4587-9b00-7122d6c12746}</Project>
+      <Project>{58938939-f40f-487e-aee6-e5f5c0f5d987}</Project>
       <Name>TrueSnow.Data.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Data\TrueSnow.Data\TrueSnow.Data.csproj">
-      <Project>{6bc1979b-c594-490f-950b-0bea0ee6c783}</Project>
-      <Name>TrueSnow.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TrueSnow.Services.Web\TrueSnow.Services.Web.csproj">
-      <Project>{0c6a3a80-d9cc-438d-b596-33658639786d}</Project>
+      <Project>{f3614c45-f08d-4c31-89f4-e43f80c2a3e3}</Project>
       <Name>TrueSnow.Services.Web</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="stylecop.json" />
-    <None Include="TrueSnow.Services.Data.ruleset" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
-    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
-    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
