@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TrueSnow.Tests.Web.Infrastructure")]
+[assembly: AssemblyTitle("TrueSnow.Web.Routes.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TrueSnow.Tests.Web.Infrastructure")]
+[assembly: AssemblyProduct("TrueSnow.Web.Routes.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b97bed22-2dc7-4e95-8f95-7b5057926ddb")]
+[assembly: Guid("8b62a08c-97d2-4905-b9c3-1753d65448c6")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -1,17 +1,24 @@
-﻿namespace TrueSnow.Tests.Web.Services
+﻿namespace TrueSnow.Services.Web.Tests
 {
+    using Contracts;
+
     using NUnit.Framework;
-    using TrueSnow.Services.Web;
-    using TrueSnow.Services.Web.Contracts;
 
     [TestFixture]
     public class IdentifierProviderTests
     {
+        private IIdentifierProvider provider;
+
+        [TestFixtureSetUp]
+        public void Init()
+        {
+            this.provider = new IdentifierProvider();
+        }
+
         [Test]
         public void EncodingAndDecodingDoesntChangeTheId()
         {
             const int Id = 1337;
-            IIdentifierProvider provider = new IdentifierProvider();
             var encoded = provider.EncodeId(Id);
             var actual = provider.DecodeId(encoded);
             Assert.AreEqual(Id, actual);
