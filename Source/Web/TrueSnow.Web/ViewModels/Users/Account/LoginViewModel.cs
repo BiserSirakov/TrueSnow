@@ -1,4 +1,4 @@
-namespace TrueSnow.Web.Models.Users
+﻿namespace TrueSnow.Web.Models.Users
 {
     using System.ComponentModel.DataAnnotations;
 

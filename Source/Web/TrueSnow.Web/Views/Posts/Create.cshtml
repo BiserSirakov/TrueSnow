@@ -1,11 +1,11 @@
 ﻿@model PostViewModel
 
-@using (Html.BeginForm("Create", "Posts", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data", style = "padding: 10px 50px;", id="createPostForm" }))
+@using (Html.BeginForm("Create", "Posts", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data", style = "padding: 10px 50px;", id = "createPostForm" }))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-group">
-        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Title", id="postTitleTb" })
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Title", id = "postTitleTb" })
         @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
     </div>
 

@@ -1,4 +1,4 @@
-﻿@(Html.Kendo().Grid<TrueSnow.Web.Areas.Administration.ViewModels.AdminUserViewModel>()
+﻿@(Html.Kendo().Grid<AdminUserViewModel>()
       .Name("grid")
       .Columns(columns =>
       {
@@ -10,7 +10,8 @@
       })
       .Editable(editable => editable.Mode(GridEditMode.PopUp))
       .Pageable()
-      .Sortable(sortable => {
+      .Sortable(sortable =>
+      {
           sortable.SortMode(GridSortMode.SingleColumn);
       })
       .Filterable()

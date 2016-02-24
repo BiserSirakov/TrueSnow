@@ -1,14 +1,15 @@
-﻿@(Html.Kendo().Grid<TrueSnow.Web.Areas.Administration.ViewModels.AdminArticleViewModel>()
+﻿@(Html.Kendo().Grid<AdminArticleViewModel>()
       .Name("grid")
       .Columns(columns =>
       {
-        columns.Bound(c => c.Title);
-        columns.Bound(c => c.Content);
-        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+          columns.Bound(c => c.Title);
+          columns.Bound(c => c.Content);
+          columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
       })
       .Editable(editable => editable.Mode(GridEditMode.PopUp))
       .Pageable()
-      .Sortable(sortable => {
+      .Sortable(sortable =>
+      {
           sortable.SortMode(GridSortMode.SingleColumn);
       })
       .Filterable()
