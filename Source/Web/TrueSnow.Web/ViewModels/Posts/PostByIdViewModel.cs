@@ -1,7 +1,7 @@
-﻿using TrueSnow.Data.Models;
-
-namespace TrueSnow.Web.Models.Posts
+﻿namespace TrueSnow.Web.Models.Posts
 {
+    using TrueSnow.Data.Models;
+
     public class PostByIdViewModel
     {
         public PostViewModel PostViewModel { get; set; }

@@ -28,7 +28,9 @@
         public ActionResult Users_Read([DataSourceRequest]DataSourceRequest request)
         {
             DataSourceResult result = this.userManager.Users
-                .ToDataSourceResult(request, user => new AdminUserViewModel
+                .ToDataSourceResult(
+                request,
+                user => new AdminUserViewModel
                 {
                     Id = user.Id,
                     FirstName = user.FirstName,
