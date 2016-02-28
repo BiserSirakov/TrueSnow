@@ -17,26 +17,20 @@
 </head>
 <body>
     <div id="ts-container" class="dashboard-page">
-
         <nav id="main-header" class="light-blue lighten-2">
             <div class="nav-wrapper">
-                <a href="/Home" class="brand-logo">TS</a>
+                <a href="/Home" class="brand-logo">True Snow</a>
                 <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 
-                <ul class="right hide-on-med-and-down">
+                <ul id="right-menu" class="right hide-on-med-and-down">
                     <li>
-                        <form>
-                            <div class="input-field">
-                                <input id="search" type="search" required>
-                                <label for="search"><i class="material-icons">search</i></label>
-                                <i class="material-icons">close</i>
-                            </div>
-                        </form>
+                        @{ Html.RenderAction("GetSearch", "Search", new { area = "" }); }
                     </li>
                     <li><a class="waves-effect waves-light btn">Post</a></li>
-                    <li><a href="#"><i class="material-icons">chat_bubble</i></a></li>
-                    <li><a href="#"><i class="material-icons">notifications</i></a></li>
-                    <li><a id="btnLogout" href="/">Log out</a></li>
+                    <li><a href="#"><i data-position="bottom" data-delay="50" data-tooltip="Messages" class="material-icons tooltipped">chat_bubble</i></a></li>
+                    <li><a href="#"><i data-position="bottom" data-delay="50" data-tooltip="Notifications" class="material-icons tooltipped">notifications</i></a></li>
+                    @{ Html.RenderAction("GetUser", "Profile", new { area = "" }); }
+                    <li><a id="btnLogout" href="/"><i data-position="bottom" data-delay="50" data-tooltip="Logout" class="material-icons tooltipped">power_settings_new</i></a></li>
                 </ul>
 
                 <ul class="side-nav" id="mobile">

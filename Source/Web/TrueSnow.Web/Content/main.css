@@ -460,3 +460,7 @@ a {
         margin-left: -150px;
     }
 }
+
+#right-menu .tooltipped {
+    height: 60px;
+}

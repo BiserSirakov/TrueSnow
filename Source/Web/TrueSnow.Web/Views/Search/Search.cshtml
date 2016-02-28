@@ -1,46 +1,55 @@
 ﻿@model SearchViewModel
 
-<h3>Results for "@Model.Query"</h3>
+<div id="dashboard-cover" class="custom-parallax"></div>
 
-<div class="row search-container">
-    <div class="col-xs-12 col-md-4">
-        <h3 class="text-center">Users</h3>
-        @foreach (var user in Model.Users)
-        {
-            <div class="row" style="margin: 20px 0;">
-                <div class="col-xs-4 col-md-3">
-                    <img src="~/File/@user.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" class="img-responsive img-circle" style="height: 60px;" />
-                </div>
-                <div class="col-xs-8 col-md-9" style="padding-left: 0; padding-top: 10px;">
-                    <h4>
-                        <a href="~/Profile/@user.Id">@user.FirstName @user.LastName</a>
-                    </h4>
+<section id="dashboard-content">
+    <div id="dashboard-content-tabs" class="tabs-menu z-depth-1">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab"><a href="#users">users</a></li>
+                        <li class="tab"><a href="#articles">articles</a></li>
+                        <li class="tab"><a href="#events">events</a></li>
+                    </ul>
                 </div>
             </div>
-        }
+        </div>
     </div>
-    <div class="col-xs-12 col-md-4">
-        <h3 class="text-center">Articles</h3>
-        @foreach (var article in Model.Articles)
-        {
-            <div class="row" style="margin-top: 20px; margin-bottom: 60px;">
-                <h4 class="text-center col-md-12">
-                    <a href="@article.Url">@article.Title</a>
-                </h4>
-                <img src="~/File/@article.Photo.Id" alt="photo" class="col-md-12 img-responsive" />
+    <div id="dashboard-content-wrapper" class="tabs-content" style="padding-left: 15px; padding-right: 15px;">
+        <div class="container">
+            <div class="row">
+                <div id="users">
+                    @foreach (var user in Model.Users)
+                    {
+                        <div class="col s12 m12 l4">
+                            <article class="card feed hoverable">
+                                <div class="card-content intro">
+                                    <div class="profile-image">
+                                        <img src="~/File/@user.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" />
+                                    </div>
+                                    <div class="feed-info">
+                                        <div class="user-name"><a href="~/Profile/@user.Id">@user.FirstName @user.LastName</a></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </article>
+                        </div>
+                    }
+                </div>
+                <div id="articles">
+                    @foreach (var user in Model.Articles)
+                    {
+
+                    }
+                </div>
+                <div id="events">
+                    @foreach (var user in Model.Events)
+                    {
+                        
+                    }
+                </div>
             </div>
-        }
+        </div>
     </div>
-    <div class="col-xs-12 col-md-4">
-        <h3 class="text-center">Events</h3>
-        @foreach (var currentEvent in Model.Events)
-        {
-            <div class="row" style="margin-top: 20px; margin-bottom: 60px;">
-                <h4 class="text-center col-md-12">
-                    <a href="@currentEvent.Url">@currentEvent.Title</a>
-                </h4>
-                <img src="~/File/@currentEvent.Photo.Id" alt="photo" class="col-md-12 img-responsive" />
-            </div>
-        }
-    </div>
-</div>
+</section>

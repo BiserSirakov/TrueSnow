@@ -2,11 +2,9 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        <input class="form-control" name="query" placeholder="Search" />
-    </div>
-    <hr />
-    <div class="text-center">
-        <input type="submit" class="btn btn-primary" value="Search" style="background-color: #4C90B7; border-color: #4C90B7;" />
+    <div class="input-field">
+        <input id="search" name="query" type="search" required style="border-radius: 40px;">
+        <label for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i>
     </div>
 }

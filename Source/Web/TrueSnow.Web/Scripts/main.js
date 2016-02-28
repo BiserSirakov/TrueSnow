@@ -1,4 +1,13 @@
 ﻿$(document).ready(function () {
+    $('.tooltipped').tooltip({ delay: 50 });
+
+    $('.modal-trigger').leanModal({
+        dismissible: true,
+        opacity: .5,
+        in_duration: 300,
+        out_duration: 300
+    });
+
     $("#btnLogout").on('click', function () {
         $('#logoutForm').submit();
     });

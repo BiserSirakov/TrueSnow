@@ -1,9 +1,8 @@
 ﻿@model ProfileViewModel
 
-<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="profile" aria-expanded="false" style="padding: 0;">
-    <img src="~/File/@Model.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" class="img-responsive img-thumbnail" style="height: 40px; padding: 0" data-toggle="tooltip" data-placement="bottom" title="Profile" data-original-title="Profile" />
-</a>
-<ul class="dropdown-menu" aria-labelledby="profile">
-    <li><a href="/Profile/@Model.Id"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> @Model.FirstName @Model.LastName</a></li>
-    <li><a id="btnLogout" href="/"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log out</a></li>
-</ul>
+<li class="relative" id="profile-link-example">
+    <a href="/Profile/@Model.Id" data-position="bottom" data-delay="50" data-tooltip="@Model.FirstName @Model.LastName" class="tooltipped">
+        <img class="profile-img" src="~/File/@Model.Files.First(x => x.FileType == FileType.Avatar).Id">
+        <div class="pulse"></div>
+    </a>
+</li>

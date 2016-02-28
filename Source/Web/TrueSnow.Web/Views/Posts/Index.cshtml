@@ -2,6 +2,13 @@
 
 @foreach (var post in Model)
 {
+     <!-- Info Post Modal -->
+    <div id="postInfoModal-@post.Id" class="modal">
+        <div class="modal-content">
+            @{ Html.RenderAction("ById", "Posts", new { id = post.Id }); }
+        </div>
+    </div>
+
     <div class="col s12 m12 l4">
         <article class="card feed hoverable">
             <div class="card-content intro">
@@ -10,7 +17,10 @@
                 </div>
                 <div class="feed-info">
                     <div class="user-name"><a href="~/Profile/@post.Creator.Id">@post.Creator.FirstName @post.Creator.LastName</a></div>
-                    <div class="feed-date">@post.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US"))</div>
+                    <div>
+                        <i class="material-icons">date_range</i>
+                        <span class="feed-date"> @post.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US"))</span>
+                    </div>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -24,7 +34,7 @@
             </div>
 
             <div class="card-action">
-                <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                <a class="waves-effect waves-grey main modal-trigger" href='#postInfoModal-@post.Id'>EXPLORE</a>
             </div>
         </article>
     </div>
