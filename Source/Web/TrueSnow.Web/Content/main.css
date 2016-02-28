@@ -1,0 +1,462 @@
+﻿#ts-container {
+    padding-top: 60px;
+}
+
+    #ts-container.stickyTab {
+        margin-top: 130px;
+    }
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #999;
+    font-family: 'Raleway',sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+ul, li {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height: 1em;
+}
+
+p {
+    color: #999;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+@media (max-width: 1279px) {
+    .container {
+        width: 993px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 100% !important;
+    }
+}
+
+ul.tabs {
+    height: 60px;
+    line-height: 60px;
+}
+
+    ul.tabs li.tab {
+        max-width: none;
+        background-color: #fff;
+        display: block;
+        float: left;
+        margin: 0;
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+    }
+
+        ul.tabs li.tab a {
+            color: #4fc3f7;
+            text-transform: lowercase;
+            font-size: 1.1em;
+        }
+
+            ul.tabs li.tab a:hover {
+                color: #81d4fa;
+            }
+
+    ul.tabs .indicator {
+        background-color: #CCC;
+    }
+
+#main-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 30px;
+    z-index: 999;
+}
+
+    #main-header .brand-logo img {
+        height: 50px;
+        width: 50px;
+    }
+
+    #main-header ul, #main-header ul li {
+        height: 100%;
+    }
+
+        #main-header ul li:hover {
+            background: none;
+        }
+
+        #main-header ul li a {
+            padding: 0 15px;
+        }
+
+        #main-header ul li .profile-img {
+            border-radius: 50%;
+            border: 2px solid #FFF;
+            margin-top: 10px;
+            width: 42px;
+        }
+
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+.no-margin-top {
+    margin-top: 0 !important;
+}
+
+.clear {
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 4px;
+    margin: 17px 0;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+    .card .card-content {
+        padding: 20px;
+    }
+
+        .card .card-content.intro {
+            padding-bottom: 0;
+        }
+
+    .card header h1 {
+        font-size: 1.5em;
+        color: #4fc3f7;
+        font-weight: 900;
+        margin-bottom: 15px;
+    }
+
+    .card header h2 {
+        font-size: 1em;
+        font-weight: 200;
+        margin-bottom: 15px;
+    }
+
+    .card header h3 {
+        font-size: 1em;
+        font-weight: 200;
+        margin-bottom: 15px;
+    }
+
+    .card a {
+        margin-right: 0;
+        text-transform: none;
+    }
+
+    .card .card-action {
+        line-height: 0.8em;
+    }
+
+        .card .card-action a {
+            border-radius: 2px;
+            padding: 10px;
+            line-height: 1em;
+        }
+
+            .card .card-action a, .card .card-action a:hover {
+                color: #999 !important;
+            }
+
+                .card .card-action a.main, .card .card-action a.main:hover {
+                    color: #4fc3f7 !important;
+                }
+
+    .card.login {
+        padding: 30px;
+    }
+
+    .card.board .card-content header h1 {
+        text-transform: uppercase;
+    }
+
+    .card.board .card-image {
+        width: 100%;
+        max-height: 250px;
+    }
+
+    .card ul.collection {
+        margin-bottom: 0;
+    }
+
+    .card.follow .card-content {
+        text-align: center;
+    }
+
+    .card.follow .card-image {
+        width: 100%;
+        max-height: 250px;
+    }
+
+    .card.follow .profile-image {
+        max-width: 80%;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        margin-top: -75px;
+        position: relative;
+    }
+
+        .card.follow .profile-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            border: 2px solid #DDD;
+        }
+
+    .card.follow .card-content h1 {
+        font-size: 90%;
+    }
+
+    .card.follow .card-content h2 {
+        font-size: 80%;
+    }
+
+    .card.feed .profile-image {
+        float: left;
+    }
+
+        .card.feed .profile-image img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid #ECECEC;
+        }
+
+    .card.feed .feed-info {
+        float: left;
+        margin-left: 30px;
+        max-width: 50%;
+        padding: 10px 0;
+    }
+
+        .card.feed .feed-info .user-name {
+            font-size: 1em;
+            color: #4fc3f7;
+            font-weight: 900;
+            margin: 3px 0 0 0;
+        }
+
+        .card.feed .feed-info .feed-date {
+            font-size: 0.8em;
+        }
+
+    .card.feed .feed-element {
+        margin: 15px 0 0 0;
+    }
+
+    .card.feed .card-image img {
+        display: block;
+        border-radius: 0;
+    }
+
+    .card.event {
+        background: #FFF;
+        margin-bottom: 0;
+    }
+
+        .card.event .card-content {
+            padding: 40px;
+        }
+
+    .card.settings h3 {
+        font-size: 1.2em;
+        color: #4fc3f7;
+        font-weight: 600;
+        margin-top: 30px;
+        padding-bottom: 10px;
+    }
+
+    .card.new-cont h3 {
+        font-size: 1.2em;
+        color: #4fc3f7;
+        font-weight: 600;
+        margin-top: 30px;
+        padding-bottom: 10px;
+    }
+
+#dashboard-cover {
+    width: 100%;
+    height: 200px;
+    background: url('Images/cover5.jpg') center center no-repeat fixed;
+    background-size: cover;
+}
+
+#dashboard-content-wrapper .card span {
+    margin: 0 3px;
+}
+
+#dashboard-content-wrapper .card .event {
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #4fc3f7;
+}
+
+#dashboard-content-wrapper .card .user {
+    color: #4fc3f7;
+}
+
+#dashboard-content-wrapper .card .board {
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #4fc3f7;
+}
+
+.tabs-menu {
+    width: 100%;
+    background: #FFF;
+    z-index: 997;
+}
+
+    .tabs-menu .row {
+        margin-bottom: 0;
+    }
+
+    .tabs-menu.fixed {
+        top: 60px;
+        left: 0;
+        position: fixed;
+    }
+
+.tabs-content.stickyTab {
+    margin-top: 60px;
+}
+
+.tabs-content {
+    padding: 100px 0 40px 0;
+    opacity: 0;
+    -webkit-transition: padding 400ms ease,opacity 400ms ease;
+    -moz-transition: padding 400ms ease,opacity 400ms ease;
+    -ms-transition: padding 400ms ease,opacity 400ms ease;
+    transition: padding 400ms ease,opacity 400ms ease;
+}
+
+    .tabs-content.moved {
+        padding-top: 40px;
+        opacity: 1;
+    }
+
+#login-container {
+    height: 100%;
+    background: url('Images/cover5.jpg') center;
+}
+
+    #login-container .panel {
+        width: 300px;
+        background-color: white;
+        border-radius: 5px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -270px;
+        margin-left: -150px;
+    }
+
+#register-container {
+    height: 100%;
+    background: url('Images/cover5.jpg') center;
+}
+
+    #register-container .panel {
+        width: 300px;
+        background-color: white;
+        border-radius: 5px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -276px;
+        margin-left: -150px;
+    }
+
+.row {
+    margin-bottom: 0;
+}
+
+a {
+    color: #4fc3f7;
+}
+
+.a-inLogin {
+    color: #4fc3f7;
+}
+
+    .a-inLogin:hover {
+        color: #81d4fa;
+    }
+
+.btn-login {
+    background-color: #4fc3f7;
+}
+
+    .btn-login:hover {
+        background-color: #81d4fa;
+    }
+
+.login-footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    margin-left: -65px;
+}
+
+.reginput {
+    margin: 0 !important;
+}
+
+@media only screen and (max-device-width: 480px) {
+    #register-container .panel {
+        width: 300px;
+        background-color: white;
+        border-radius: 5px;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        margin-top: 0;
+        margin-left: -150px;
+    }
+
+    #login-container .panel {
+        width: 300px;
+        background-color: white;
+        border-radius: 5px;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        margin-top: 0;
+        margin-left: -150px;
+    }
+}

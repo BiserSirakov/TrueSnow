@@ -21,6 +21,10 @@
                       "~/Scripts/custom.js",
                       "~/Scripts/sweetalert-dev.js",
                       "~/Scripts/site.js"));
+            bundles.Add(new ScriptBundle("~/bundles/main").Include(
+                      "~/Scripts/masonry.min.js",
+                      "~/Scripts/scrollTo.min.js",
+                      "~/Scripts/main.js"));
         }
 
         private static void RegisterStyles(BundleCollection bundles)
@@ -34,6 +38,8 @@
             bundles.Add(new StyleBundle("~/Content/kendo").Include(
                       "~/Content/KendoUI/kendo.common.min.css",
                       "~/Content/KendoUI/kendo.office365.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/main").Include("~/Content/main.css"));
         }
     }
 }

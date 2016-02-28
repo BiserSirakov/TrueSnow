@@ -1,15 +1,28 @@
-﻿<div class="row">
-    <div class="col-md-3" style="margin-bottom: 40px;">
-        <h3 style="text-align: center; margin-top: 0">Latest article</h3>
-        @{ Html.RenderAction("GetLatest", "Articles"); }
-    </div>
+﻿<div id="dashboard-cover" class="custom-parallax"></div>
 
-    <div class="col-md-6">
-        @{ Html.RenderAction("Index", "Posts"); }
+<section id="dashboard-content">
+    <div id="dashboard-content-tabs" class="tabs-menu z-depth-1">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab"><a href="#stream">stream</a></li>
+                        <li class="tab"><a href="#discover">discover</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="col-md-3" style="margin-bottom: 40px;">
-        <h3 style="text-align: center; margin-top: 0">Latest event</h3>
-        @{ Html.RenderAction("GetLatest", "Events"); }
+    <div id="dashboard-content-wrapper" class="tabs-content" style="padding-left: 15px; padding-right: 15px;">
+        <div class="container">
+            <div class="row">
+                <div id="stream">
+                    @{ Html.RenderAction("Index", "Posts"); }
+                </div>
+                <div id="discover">
+                    <div style="height: 2000px;"></div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>

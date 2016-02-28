@@ -2,35 +2,30 @@
 
 @foreach (var post in Model)
 {
-    <!-- Info Post Modal -->
-    <div class="modal" id="postInfoModal-@post.Id" data-easein="fadeIn" tabindex="-1" role="dialog" aria-labelledby="postInfoModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                @{ Html.RenderAction("ById", "Posts", new { id = post.Id }); }
+    <div class="col s12 m12 l4">
+        <article class="card feed hoverable">
+            <div class="card-content intro">
+                <div class="profile-image">
+                    <img src="~/File/@post.Creator.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" />
+                </div>
+                <div class="feed-info">
+                    <div class="user-name"><a href="~/Profile/@post.Creator.Id">@post.Creator.FirstName @post.Creator.LastName</a></div>
+                    <div class="feed-date">@post.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US"))</div>
+                </div>
+                <div class="clear"></div>
             </div>
-        </div>
-    </div>
 
-    <div class="panel panel-primary" style="border: none;">
-        <div class="panel-heading row" style="margin: 0 !important; padding: 0; overflow: hidden; border: none;">
-            <div class="col-xs-2 col-md-2" style="padding: 0">
-                <img src="~/File/@post.Creator.Files.First(x => x.FileType == FileType.Avatar).Id" alt="photo" class="img-responsive" style="height: 50px;" />
+            <div class="card-content">
+                <p>@post.Title</p>
             </div>
-            <div class="col-xs-10 col-md-10" style="padding: 0; padding-top: 5px; margin-left: -30px;">
-                <h3 class="panel-title">
-                    <a href="~/Profile/@post.Creator.Id">@post.Creator.FirstName @post.Creator.LastName</a>
-                    <span class="pull-right" style="font-size: 13px; margin-left: 12px; margin-top: 13px;"><span class="glyphicon glyphicon-calendar"></span> @post.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US"))</span>
-                    <span class="pull-right" style="font-size: 13px; margin-left: 12px; margin-top: 13px;"><span class="glyphicon glyphicon-heart"></span><span class="likesCount-@post.Id"> @post.Likes</span></span>
-                    <span class="pull-right" style="font-size: 13px; margin-left: 12px; margin-top: 13px;"><span class="glyphicon glyphicon-comment"></span><span class="commentsCount-@post.Id"> @post.CommentsCount</span></span>
-                    <br />
-                    <span style="font-size: 21px;">@post.Title</span>
-                </h3>
+
+            <div class="card-image">
+                <img src="~/File/@post.Photo.Id" alt="photo" />
             </div>
-        </div>
-        <div class="panel-body" style="padding: 0;">
-            <a href="#postInfoModal-@post.Id" role="button" data-toggle="modal" data-target="#postInfoModal-@post.Id">
-                <img src="~/File/@post.Photo.Id" alt="photo" class="img-responsive" />
-            </a>
-        </div>
+
+            <div class="card-action">
+                <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+            </div>
+        </article>
     </div>
-                    }
+}

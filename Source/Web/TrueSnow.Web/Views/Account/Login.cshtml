@@ -7,49 +7,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <title>True Snow</title>
+
+    <meta name="description" content="A place for the true snowboarders. Your best posts, articles, evnts and more." />
+    <meta name="keywords" content="social network, social, snow, snowboard, snowboarding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - True Snow</title>
-    @Styles.Render("~/Content/css")
+    <meta charset="utf-8" />
+
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+    @Styles.Render("~/Content/main")
 </head>
 <body>
-    <div class="page-wrap">
-        <div class="container panel panel-default text-center" style="width: 300px;">
-            @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", style = "padding-bottom: 10px" }))
+    <div id="login-container">
+        <div class="panel z-depth-4">
+            @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", style = "padding-bottom: 10px" }))
             {
                 @Html.AntiForgeryToken()
-                <h3 style="color: #4C90B7; margin-bottom: 20px;">Login</h3>
-                <img src="~/Content/Images/default-avatar.png" class="img-responsive img-circle" style="width: 100px; margin-left: auto; margin-right: auto" />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                <div class="form-group" style="margin: 20px;">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
-                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                <h4 class="center-align" style="color: #4C90B7; margin: 10px;">Login</h4>
+                <div class="center-align">
+                    <img class="circle responsive-img" src="~/Content/Images/default-avatar.png" style="width: 100px;" />
                 </div>
 
-                <div class="form-group" style="margin: 20px;">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
-                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "validate", placeholder = "Email" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
                 </div>
 
-                <hr />
-
-                <div class="form-group text-center">
-                    <input type="submit" value="Login " class="btn btn-primary" />
+                <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                        @Html.PasswordFor(m => m.Password, new { @class = "validate", placeholder = "Password" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
                 </div>
 
-                <span>New? </span><a class="a-inLogin" href="/Register">Register now!</a>
+                <div class="center-align">
+                    <button type="submit" class="waves-effect waves-light btn btn-login">Login</button>
+                    <div style="margin-top: 10px;">
+                        <span>New? </span><a style="font-weight:bold;" class="a-inLogin" href="/Register">Register now!</a>
+                    </div>
+                </div>
+            }
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
             }
         </div>
 
-        @section Scripts {
-            @Scripts.Render("~/bundles/jqueryval")
-        }
+        <div class="login-footer center-align">
+            <div>
+                © @DateTime.Now.Year - True Snow
+            </div>
+            <a class="grey-text text-lighten-4" href="https://github.com/BiserSirakov/TrueSnow" target="_blank">Open Source</a>
+        </div>
     </div>
 
-    <footer class="site-footer">
-        <p>&copy; @DateTime.Now.Year - True Snow</p>
-        <a href="https://github.com/BiserSirakov/TrueSnow" target="_blank" class="a-footer">Open Source</a>
-    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    @Scripts.Render("~/bundles/main")
 </body>
 </html>

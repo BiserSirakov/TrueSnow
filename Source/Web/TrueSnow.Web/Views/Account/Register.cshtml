@@ -7,77 +7,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <title>True Snow</title>
+
+    <meta name="description" content="A place for the true snowboarders. Your best posts, articles, evnts and more." />
+    <meta name="keywords" content="social network, social, snow, snowboard, snowboarding" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - True Snow</title>
-    @Styles.Render("~/Content/css")
+    <meta charset="utf-8" />
+
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+    @Styles.Render("~/Content/main")
 </head>
 <body>
-    <div class="page-wrap">
-        <div class="container panel panel-default text-center" style="width: 300px;">
-            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data", style = "padding-bottom: 10px" }))
+    <div id="register-container">
+        <div class="panel z-depth-4">
+            @using (Html.BeginForm("Register", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", style = "padding-bottom: 10px", enctype = "multipart/form-data" }))
             {
                 @Html.AntiForgeryToken()
-                <h3 style="color: #4C90B7; margin-bottom: 20px;">Register</h3>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                <div class="form-group" style="margin: 20px;">
-                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "First Name" })
-                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                <h4 class="center-align" style="color: #4C90B7; margin: 10px;">Register</h4>
+
+                <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                        @Html.TextBoxFor(m => m.FirstName, new { @class = "validate reginput", placeholder = "First Name" })
+                        @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                    </div>
                 </div>
 
-                <div class="form-group" style="margin: 20px;">
-                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Last Name" })
-                    @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                        @Html.TextBoxFor(m => m.LastName, new { @class = "validate reginput", placeholder = "Last Name" })
+                        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                    </div>
                 </div>
 
-                <div class="form-group" style="margin: 20px;">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
-                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "validate reginput", placeholder = "Email" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
                 </div>
 
-                <div class="form-group" style="margin: 20px;">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
-                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                        @Html.PasswordFor(m => m.Password, new { @class = "validate reginput", placeholder = "Password" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
                 </div>
 
-                <div class="form-group" style="margin: 20px;">
-                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm Password" })
-                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "validate reginput", placeholder = "Confirm Password" })
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
                 </div>
 
-                <div class="form-group" style="margin: 20px;">
-                    <input class="form-control input-validation-error"
-                           id="Avatar"
-                           type="file"
-                           name="upload"
-                           style="background-color: #4C90B7"
-                           data-val="true"
-                           data-val-required="The Photo is required." />
-
-                    <span class="text-danger field-validation-error"
-                          data-valmsg-for="Avatar"
-                          data-valmsg-replace="true">
-                        <span id="Photo-error" class="">The Avatar uplode is required.</span>
-                    </span>
+                <div class="row" style="height: 65px;">
+                    <div class="input-field file-field col s10 offset-s1">
+                        <div class="waves-effect waves-light btn btn-login">
+                            Avatar
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
                 </div>
 
-                <hr />
-
-                <div class="form-group text-center">
-                    <input type="submit" value="Register" class="btn btn-primary" />
+                <div class="center-align" style="margin-top: 10px;">
+                    <button type="submit" class="waves-effect waves-light btn btn-login">Register</button>
                 </div>
             }
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+        </div>
+
+        <div class="login-footer center-align">
+            <div>
+                © @DateTime.Now.Year - True Snow
+            </div>
+            <a class="grey-text text-lighten-4" href="https://github.com/BiserSirakov/TrueSnow" target="_blank">Open Source</a>
         </div>
     </div>
 
-    <footer class="site-footer">
-        <p>&copy; @DateTime.Now.Year - True Snow</p>
-        <a href="https://github.com/BiserSirakov/TrueSnow" target="_blank" class="a-footer">Open Source</a>
-    </footer>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    @Scripts.Render("~/bundles/main")
 </body>
 </html>
