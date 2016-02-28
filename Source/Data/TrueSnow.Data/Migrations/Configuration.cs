@@ -1,17 +1,18 @@
-﻿namespace TrueSnow.Data.Migrations
+namespace TrueSnow.Data.Migrations
 {
     using System.Data.Entity.Migrations;
     using System.Linq;
 
     using Microsoft.AspNet.Identity.EntityFramework;
+
     using Web.Infrastructure.Constants;
 
     public sealed class Configuration : DbMigrationsConfiguration<TrueSnowDbContext>
     {
         public Configuration()
         {
-            this.AutomaticMigrationsEnabled = false;
-            this.AutomaticMigrationDataLossAllowed = false;
+            this.AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(TrueSnowDbContext context)

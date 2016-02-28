@@ -317,6 +317,7 @@
     <Content Include="Content\KendoUI\textures\stripe6.png" />
     <Content Include="Content\KendoUI\textures\transparency.png" />
     <Content Include="Content\KendoUI\textures\transtexture.png" />
+    <Content Include="Content\profile.html" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\masonry.min.js" />
     <Content Include="Content\profile.css" />

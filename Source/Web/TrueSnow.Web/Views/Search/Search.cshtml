@@ -20,6 +20,9 @@
         <div class="container">
             <div class="row">
                 <div id="users">
+                    <h4>
+                       Results for "@Model.Query" 
+                    </h4>
                     @foreach (var user in Model.Users)
                     {
                         <div class="col s12 m12 l4">
@@ -36,18 +39,27 @@
                             </article>
                         </div>
                     }
+                    <div style="height: 406px;"></div>
                 </div>
                 <div id="articles">
+                    <h4>
+                        Results for "@Model.Query"
+                    </h4>
                     @foreach (var user in Model.Articles)
                     {
 
                     }
+                    <div style="height: 406px;"></div>
                 </div>
                 <div id="events">
+                    <h4>
+                        Results for "@Model.Query"
+                    </h4>
                     @foreach (var user in Model.Events)
                     {
-                        
+
                     }
+                    <div style="height: 406px;"></div>
                 </div>
             </div>
         </div>

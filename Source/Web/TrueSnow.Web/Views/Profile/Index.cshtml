@@ -1,73 +1,75 @@
 ﻿@model ProfileViewModel
 
-<div class="jumbotron">
-    @if (Model.Files.Any(x => x.FileType == FileType.Cover))
-    {
-        <img src="~File/@Model.Files.First(x => x.FileType == FileType.Cover).Id" alt="cover" class="img-responsive" />
-    }
-    else
-    {
-        <img src="~/Content/Images/untitled.png" alt="cover" class="img-responsive" />
-    }
-</div>
+<div id="profile-cover" class="custom-parallax"></div>
 
-<div class="row">
-    <div class="col-xs-4 col-lg-2">
-        <img src="~/File/@Model.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" class="avatar img-responsive img-circle" />
-    </div>
-    <div class="col-xs-4 col-lg-5">
-        <h1 class="profile-name" style="margin-top: 100px;">@Model.FirstName @Model.LastName</h1>
-    </div>
-    <div class="profile-stats col-xs-4 col-lg-5" style="margin-top: 100px;">
-        <h4 class="pull-left">POSTS <span class="badge">@Model.PostsCount</span></h4>
-        <a href="#" data-toggle="modal" data-target="#followingModal" class="pull-left follow-btn">FOLLOWING <span class="badge">@Model.Following.Count</span></a>
-        <a href="#" data-toggle="modal" data-target="#followersModal" class="pull-left follow-btn">FOLLOWERS <span class="badge">@Model.Followers.Count</span></a>
-        @if (Model.Id == HttpContext.Current.User.Identity.GetUserId()) // If current user is the profile`s user
-        {
-            <a href="#" class="pull-left btn btn-sm btn-default" style="margin-top: 8px; margin-left: 10px;">Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-        }
-        else
-        {
-            if (Model.Followers.Any(x => x.Id == HttpContext.Current.User.Identity.GetUserId())) // If current user follows the profile`s user
-            {
-                @Html.ActionLink("Unfollow", "Unfollow", "Follows", new { id = Model.Id }, new { id = "unfollowLink", @class = "btn btn-sm btn-primary", style = "margin-top: 8px; margin-left: 10px;" });
-            }
-            else
-            {
-                @Html.ActionLink("Follow", "Follow", "Follows", new { id = Model.Id }, new { id = "followLink", @class = "btn btn-sm btn-primary", style = "margin-top: 8px; margin-left: 10px;" });
-            }
-        }
-    </div>
-
-    @{ Html.RenderAction("ByUserId", "Posts", new { userId = Model.Id }); }
-</div>
-
-<!-- Followers Modal -->
-<div class="modal fade" id="followersModal" tabindex="-1" role="dialog" aria-labelledby="followersModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="followersModalLabel" style="text-align: center;">Followers</h4>
+<div id="profile-info">
+    <div class="container">
+        <div class="row">
+            <div class="col m3 s12">
+                <img class="profile-image z-depth-1" src="~/File/@Model.Files.First(x => x.FileType == FileType.Avatar).Id" />
             </div>
-            <div class="modal-body">
-                @{ Html.RenderAction("Followers", "Follows"); }
+            <div class="col m9 s12">
+                <article class="profile-data">
+                    <div class="name">@Model.FirstName @Model.LastName</div>
+                    <div class="row">
+                        <div class="col m9 s12">
+                            <div class="profile-scores">
+                                <div class="row">
+                                    <div class="col s4">
+                                        <span class="heavy">@Model.PostsCount</span> posts
+                                    </div>
+                                    <div class="col s4">
+                                        <span class="heavy">0</span> followers
+                                    </div>
+                                    <div class="col s4">
+                                        <span class="heavy">0</span> following
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                            </p>
+                        </div>
+                        <div class="col m3 s12">
+                            <div class="profile-actions">
+                                <a class="waves-effect waves-grey btn-flat grey lighten-4 follow">follow</a>
+                                <a class="waves-effect waves-grey btn-flat grey lighten-4 discover">discover</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Following Modal -->
-<div class="modal fade" id="followingModal" tabindex="-1" role="dialog" aria-labelledby="followingModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="followingModalLabel" style="text-align: center;">Following</h4>
-            </div>
-            <div class="modal-body">
-                @{ Html.RenderAction("Following", "Follows"); }
+<section id="profile-content">
+    <div id="profile-content-tabs" class="tabs-menu z-depth-1">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab"><a href="#posts">posts</a></li>
+                        <li class="tab"><a href="#followers">followers</a></li>
+                        <li class="tab"><a href="#following">following</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <div id="profile-content-wrapper" class="tabs-content">
+        <div class="container">
+            <div class="row">
+                <div id="posts">
+                    @{ Html.RenderAction("ByUserId", "Posts", new { userId = Model.Id }); }
+                </div>
+                <div id="followers">
+
+                </div>
+                <div id="following">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

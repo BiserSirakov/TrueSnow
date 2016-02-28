@@ -1,0 +1,719 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Raleway:200,600,900' />
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/joyride.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/override.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/general.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/form.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/header.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/card.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/tab-content.css" />
+
+    <link type="text/css" rel="stylesheet" href="assets/css/dashboard.css" />
+
+    <link type="text/css" rel="stylesheet" href="assets/css/profile.css" />
+
+    <link type="text/css" rel="stylesheet" href="assets/css/board.css" />
+
+    <link type="text/css" rel="stylesheet" href="assets/css/tour-manager.css" />
+</head>
+<body>
+    <div id="la-container" class="profile-page">
+        <nav id="main-header" class="cyan">
+            <div class="nav-wrapper">
+
+                <a href="?type=dashboard&id=dashboard" class="brand-logo">
+                    <img src="assets/imgs/logo-small.png" />
+                </a>
+
+                <div class="search">
+                </div>
+
+                <ul class="right side-nav">
+                    <li><a href="?type=settings&id=settings"><i class="mdi-action-settings"></i></a></li>
+                    <li><a href="#"><i class="mdi-social-notifications"></i></a></li>
+                    <li class="relative" id="profile-link-example"><a href="?id=profile"><img class="profile-img" src="assets/imgs/commons/me.png" /><div class="pulse"></div></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="profile-cover" class="custom-parallax"></div>
+
+        <section id="profile-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col m3 s12">
+                        <img class="profile-image z-depth-1" src="assets/imgs/commons/profile.jpg" />
+                    </div>
+                    <div class="col m9 s12">
+                        <article class="profile-data">
+                            <div class="name">DANIELE PETRAROLO <span class="job">/ web developer</span></div>
+                            <div class="row">
+                                <div class="col m9 s12">
+                                    <div class="profile-scores">
+                                        <div class="row">
+                                            <div class="col s4">
+                                                <span class="heavy">3</span> boards
+                                            </div>
+                                            <div class="col s4">
+                                                <span class="heavy">207</span> followers
+                                            </div>
+                                            <div class="col s4">
+                                                <span class="heavy">120</span> following
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                                    </p>
+                                </div>
+                                <div class="col m3 s12">
+                                    <div class="profile-actions">
+                                        <a class="waves-effect waves-grey btn-flat grey lighten-4 follow">follow</a>
+                                        <a class="waves-effect waves-grey btn-flat grey lighten-4 discover">discover</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile-content">
+            <div id="profile-content-tabs" class="tabs-menu z-depth-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs">
+                                <li class="tab"><a href="#boards-feed">boards &amp; feed</a></li>
+                                <li class="tab"><a href="#followers">followers</a></li>
+                                <li class="tab"><a href="#following">following</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="profile-content-wrapper" class="tabs-content">
+                <div class="container">
+                    <div class="row">
+                        <div id="boards-feed">
+                            <div class="col s12 m6 l4" id="board-profile-example">
+                                <article class="card board">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/travels.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>TRAVELS</h1>
+                                            <h2>5 events</h2>
+                                        </header>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...
+                                        </p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">SHARE</a>
+                                        <a class=" main relative" href='?id=board'>
+                                            EXPLORE
+                                            <div class="pulse"></div>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l4">
+                                <article class="card board">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/career.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>CAREERS</h1>
+                                            <h2>8 events</h2>
+                                        </header>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...
+                                        </p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">SHARE</a>
+                                        <a class="waves-effect waves-grey main no-link" href='?id=board'>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l4">
+                                <article class="card board">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/sport.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>SPORT</h1>
+                                            <h2>3 events</h2>
+                                        </header>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...
+                                        </p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">SHARE</a>
+                                        <a class="waves-effect waves-grey main no-link" href='?id=board'>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="col s12">
+
+                                <div id="feed-resume-example">
+                                    <article class="feed-group">
+                                        <header>
+                                            <h1>November</h1>
+                                        </header>
+                                        <div class="card">
+                                            <ul class="collection">
+                                                <li class="collection-item feed">
+                                                    <div class="row">
+                                                        <div class="col s12 m1">
+                                                            <i class="mdi-action-favorite"></i>
+                                                        </div>
+                                                        <div class="col s12 m8">
+                                                            I loved <span class="event">GMAIL RELEASE</span> on <a class="user">@larry</a> <span class="board">CAREER</span> board
+                                                        </div>
+                                                        <div class="col s12 m3">
+                                                            <span class="right">22/11/2014</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="collection-item feed">
+                                                    <div class="row">
+                                                        <div class="col s12 m1">
+                                                            <i class="mdi-action-bookmark"></i>
+                                                        </div>
+                                                        <div class="col s12 m8">
+                                                            New subscription for <a class="user">@katie</a> <span class="board">PERSONAL PROJECTS</span> board
+                                                        </div>
+                                                        <div class="col s12 m3">
+                                                            <span class="right">10/11/2014</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="collection-item feed">
+                                                    <div class="row">
+                                                        <div class="col s12 m1">
+                                                            <i class="mdi-file-folder"></i>
+                                                        </div>
+                                                        <div class="col s12 m8">
+                                                            I've created a new board! Discover my <span class="board">TRAVEL</span> experience and subscribe it!
+                                                        </div>
+                                                        <div class="col s12 m3">
+                                                            <span class="right">02/11/2014</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="collection-item feed">
+                                                    <div class="row">
+                                                        <div class="col s12 m1">
+                                                            <i class="mdi-content-add-circle"></i>
+                                                        </div>
+                                                        <div class="col s12 m8">
+                                                            New event on my <span class="board">TRAVEL board</span> - <span class="event">AMAZING IN AUSTRALIA</span> on 10/05/2014
+                                                        </div>
+                                                        <div class="col s12 m3">
+                                                            <span class="right">02/11/2014</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </div>
+
+                                <article class="feed-group">
+                                    <header>
+                                        <h1>October</h1>
+                                    </header>
+                                    <div class="card">
+                                        <ul class="collection">
+                                            <li class="collection-item feed">
+                                                <div class="row">
+                                                    <div class="col s12 m1">
+                                                        <i class="mdi-action-favorite"></i>
+                                                    </div>
+                                                    <div class="col s12 m8">
+                                                        I loved <span class="event">GMAIL RELEASE</span> on <a class="user">@larry</a> <span class="board">CAREER</span> board
+                                                    </div>
+                                                    <div class="col s12 m3">
+                                                        <span class="right">22/10/2014</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="collection-item feed">
+                                                <div class="row">
+                                                    <div class="col s12 m1">
+                                                        <i class="mdi-action-bookmark"></i>
+                                                    </div>
+                                                    <div class="col s12 m8">
+                                                        New subscription for <a class="user">@katie</a> <span class="board">PERSONAL PROJECTS</span> board
+                                                    </div>
+                                                    <div class="col s12 m3">
+                                                        <span class="right">10/10/2014</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="collection-item feed">
+                                                <div class="row">
+                                                    <div class="col s12 m1">
+                                                        <i class="mdi-file-folder"></i>
+                                                    </div>
+                                                    <div class="col s12 m8">
+                                                        I've created a new board! Discover my <span class="board">TRAVEL</span> experience and subscribe it!
+                                                    </div>
+                                                    <div class="col s12 m3">
+                                                        <span class="right">02/10/2014</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="collection-item feed">
+                                                <div class="row">
+                                                    <div class="col s12 m1">
+                                                        <i class="mdi-content-add-circle"></i>
+                                                    </div>
+                                                    <div class="col s12 m8">
+                                                        New event on my <span class="board">TRAVEL board</span> - <span class="event">AMAZING IN AUSTRALIA</span> on 10/05/2014
+                                                    </div>
+                                                    <div class="col s12 m3">
+                                                        <span class="right">02/10/2014</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="collection-item feed">
+                                                <div class="row">
+                                                    <div class="col s12 m1">
+                                                        <i class="mdi-content-add-circle"></i>
+                                                    </div>
+                                                    <div class="col s12 m8">
+                                                        New event on my <span class="board">TRAVEL board</span> - <span class="event">AMAZING IN AUSTRALIA</span> on 10/05/2014
+                                                    </div>
+                                                    <div class="col s12 m3">
+                                                        <span class="right">02/10/2014</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div id="followers">
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/travels.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-1.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>ALEN SUBAT</h1>
+                                            <h2>software developer</h2>
+                                            <h3>@Trip314</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/sport.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-2.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>LARRY BUCK</h1>
+                                            <h2>CEO at Jooble Inc.</h2>
+                                            <h3>@larry</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/career.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-3.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>SAMANTHA JACKSON</h1>
+                                            <h2>travel &amp; life-style blogger</h2>
+                                            <h3>@samJack</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/sport.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-4.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>PETER SMITH</h1>
+                                            <h2>graphic design</h2>
+                                            <h3>@peter_smith</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/career.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-3.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>SAMANTHA JACKSON</h1>
+                                            <h2>travel &amp; life-style blogger</h2>
+                                            <h3>@samJack</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/travels.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-1.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>ALEN SUBAT</h1>
+                                            <h2>software developer</h2>
+                                            <h3>@Trip314</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/sport.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-2.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>LARRY BUCK</h1>
+                                            <h2>CEO at Jooble Inc.</h2>
+                                            <h3>@larry</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/sport.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-4.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>PETER SMITH</h1>
+                                            <h2>graphic design</h2>
+                                            <h3>@peter_smith</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div id="following">
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/sport.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-2.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>LARRY BUCK</h1>
+                                            <h2>CEO at Jooble Inc.</h2>
+                                            <h3>@larry</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/travels.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-1.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>ALEN SUBAT</h1>
+                                            <h2>software developer</h2>
+                                            <h3>@Trip314</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/sport.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-2.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>LARRY BUCK</h1>
+                                            <h2>CEO at Jooble Inc.</h2>
+                                            <h3>@larry</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/sport.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-4.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>PETER SMITH</h1>
+                                            <h2>graphic design</h2>
+                                            <h3>@peter_smith</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/career.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-3.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>SAMANTHA JACKSON</h1>
+                                            <h2>travel &amp; life-style blogger</h2>
+                                            <h3>@samJack</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/travels.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-1.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>ALEN SUBAT</h1>
+                                            <h2>software developer</h2>
+                                            <h3>@Trip314</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/career.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-3.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>SAMANTHA JACKSON</h1>
+                                            <h2>travel &amp; life-style blogger</h2>
+                                            <h3>@samJack</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <article class="card follow">
+                                    <div class="card-image">
+                                        <img src="assets/imgs/boards/sport.jpg" />
+                                    </div>
+                                    <div class="profile-image">
+                                        <img src="assets/imgs/commons/follower-4.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <header>
+                                            <h1>PETER SMITH</h1>
+                                            <h2>graphic design</h2>
+                                            <h3>@peter_smith</h3>
+                                        </header>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="waves-effect waves-grey" href="">FOLLOW</a>
+                                        <a class="waves-effect waves-grey main" href=''>EXPLORE</a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="tour-manager" class="modal">
+            <div class="modal-content">
+                <h2>THIS IS AWESOME!</h2>
+                <p>
+                    Show the world who you really are and what you're capable of. Share with your followers your accomplishments.<br />
+                    Introduce yourself with your hobbies, create new boards to collect your epic achievements, or simply follow your friends.
+                </p>
+                <p>
+                    Next step: click on the "Explore" button of the Travel board!
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="waves-effect waves-grey btn-flat modal-action modal-close">DISCOVER</a>
+            </div>
+        </div>
+        <ol id="tourID">
+            <li data-id="profile-info" class="profile-info" data-options="tipLocation: bottom;">
+                This is the profile page<br />
+                Let's discover more: here you'll find your personal data like name, job, any bio and some social info like followers or all of your boards!<br /><br />
+            </li>
+            <li data-id="feed-resume-example" data-options="tipLocation: bottom;">
+                This is the feed section.<br />
+                Here we can find the latest activities of users you follow as well as board events or other useful activities.<br /><br />
+            </li>
+            <li data-id="board-profile-example">
+                The last and the most important<br />
+                This is the #TRAVEL board timeline of the exi!<br /><br />
+                NEXT STEP: click on the "EXPLORE" button with the heartbeating effect to open the board!<br /><br />
+            </li>
+        </ol>
+    </div>
+    <div id="please-desktop">
+        <img src="assets/imgs/logo.png" width="200" height="200" />
+        <br /><br />
+        The mobile version is a work in progress.
+        <br />
+        Please check it out on your computer.<br /><br />
+        Thank you! :D
+    </div>
+    <div id="tour-manager-nope" class="modal">
+        <div class="modal-content">
+            <h2>Work in progress...</h2>
+            <p>
+                This section is a work in progress. <br />
+                Check this back later. ;)
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="waves-effect waves-grey btn-flat modal-action modal-close">DISCOVER</a>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="assets/js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/materialize.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/masonry.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/modernizr.mq.js"></script>
+    <script type="text/javascript" src="assets/js/libs/jquery.cookie.js"></script>
+    <script type="text/javascript" src="assets/js/libs/jquery.joyride.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+    <script type="text/javascript" src="assets/js/tour-manager.js"></script>
+</body>
+<!-- </html> -->

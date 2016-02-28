@@ -57,10 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201602242341055_InitialCreate.cs" />
-    <Compile Include="Migrations\201602242341055_InitialCreate.Designer.cs">
-      <DependentUpon>201602242341055_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TrueSnowDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,11 +78,6 @@
       <Project>{58938939-f40f-487e-aee6-e5f5c0f5d987}</Project>
       <Name>TrueSnow.Data.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602242341055_InitialCreate.resx">
-      <DependentUpon>201602242341055_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
