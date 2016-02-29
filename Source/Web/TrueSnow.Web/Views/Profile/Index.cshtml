@@ -19,10 +19,10 @@
                                         <span class="heavy">@Model.PostsCount</span> posts
                                     </div>
                                     <div class="col s4">
-                                        <span class="heavy">0</span> followers
+                                        <span class="heavy">@Model.Followers.Count</span> followers
                                     </div>
                                     <div class="col s4">
-                                        <span class="heavy">0</span> following
+                                        <span class="heavy">@Model.Following.Count</span> following
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +32,22 @@
                         </div>
                         <div class="col m3 s12">
                             <div class="profile-actions">
-                                <a class="waves-effect waves-grey btn-flat grey lighten-4 follow">follow</a>
+                                @if (Model.Id == HttpContext.Current.User.Identity.GetUserId()) // If current user is the profile`s user
+                                {
+                                    <a class="waves-effect waves-grey btn-flat grey lighten-4">edit</a>
+                                }
+                                else
+                                {
+                                    if (Model.Followers.Any(x => x.Id == HttpContext.Current.User.Identity.GetUserId())) // If current user follows the profile`s user
+                                    {
+                                        @Html.ActionLink("Unfollow", "Unfollow", "Follows", new { id = Model.Id }, new { id = "unfollowLink", @class = "waves-effect waves-grey btn-flat grey lighten-4" });
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Follow", "Follow", "Follows", new { id = Model.Id }, new { id = "followLink", @class = "waves-effect waves-grey btn-flat grey lighten-4" });
+                                    }
+                                }
+
                                 <a class="waves-effect waves-grey btn-flat grey lighten-4 discover">discover</a>
                             </div>
                         </div>
@@ -62,12 +77,15 @@
             <div class="row">
                 <div id="posts">
                     @{ Html.RenderAction("ByUserId", "Posts", new { userId = Model.Id }); }
+                    <div style="height: 406px;"></div>
                 </div>
                 <div id="followers">
-
+                    @{ Html.RenderAction("Followers", "Follows"); }
+                    <div style="height: 406px;"></div>
                 </div>
                 <div id="following">
-
+                    @{ Html.RenderAction("Following", "Follows"); }
+                    <div style="height: 406px;"></div>
                 </div>
             </div>
         </div>

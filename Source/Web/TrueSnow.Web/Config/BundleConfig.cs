@@ -24,6 +24,7 @@
             bundles.Add(new ScriptBundle("~/bundles/main").Include(
                       "~/Scripts/masonry.min.js",
                       "~/Scripts/scrollTo.min.js",
+                      "~/Scripts/sweetalert-dev.js",
                       "~/Scripts/main.js"));
         }
 
@@ -39,7 +40,7 @@
                       "~/Content/KendoUI/kendo.common.min.css",
                       "~/Content/KendoUI/kendo.office365.min.css"));
 
-            bundles.Add(new StyleBundle("~/Content/main").Include("~/Content/main.css"));
+            bundles.Add(new StyleBundle("~/Content/main").Include("~/Content/main.css", "~/Content/sweetalert.css"));
         }
     }
 }

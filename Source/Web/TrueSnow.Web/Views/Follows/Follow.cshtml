@@ -2,16 +2,17 @@
 
 @foreach (var user in Model)
 {
-    <div class="row">
-        <div class="col-md-2">
-
-        </div>
-        <div class="col-md-4">
-            <img src="~/File/@user.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" class="avatar img-responsive img-circle" style="width: 80px;" />
-        </div>
-        <div class="col-md-6" style="margin: 25px 0; margin-left: -68px;">
-            <a href="~/Profile/@user.Id" class="follow-btn">@user.FirstName @user.LastName</a>
-        </div>
+    <div class="col s12 m12 l4">
+        <article class="card feed hoverable">
+            <div class="card-content intro">
+                <div class="profile-image">
+                    <img src="~/File/@user.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" />
+                </div>
+                <div class="feed-info">
+                    <div class="user-name"><a href="~/Profile/@user.Id">@user.FirstName @user.LastName</a></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </article>
     </div>
-    <hr />
 }

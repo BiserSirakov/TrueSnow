@@ -2,7 +2,7 @@
 
 @foreach (var post in Model)
 {
-     <!-- Info Post Modal -->
+    <!-- Info Post Modal -->
     <div id="postInfoModal-@post.Id" class="modal">
         <div class="modal-content">
             @{ Html.RenderAction("ById", "Posts", new { id = post.Id }); }

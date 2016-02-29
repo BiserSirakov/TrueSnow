@@ -1,39 +1,37 @@
 ﻿@model PostViewModel
 
-@using (Html.BeginForm("Create", "Posts", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data", style = "padding: 10px 50px;", id = "createPostForm" }))
+@using (Html.BeginForm("Create", "Posts", FormMethod.Post, new { role = "form", enctype = "multipart/form-data", id = "createPostForm" }))
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Title", id = "postTitleTb" })
-        @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+    <div class="row">
+        <div class="input-field col s10 offset-s1">
+            @Html.TextBoxFor(m => m.Title, new { @class = "validate reginput", placeholder = "Title" })
+            @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+        </div>
     </div>
 
-    <div class="form-group">
-        @Html.TextAreaFor(m => m.Content, new { @class = "form-control", rows = "4", placeholder = "Content", id = "postContentTb" })
-        @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
+    <div class="row">
+        <div class="input-field col s10 offset-s1">
+            @Html.TextBoxFor(m => m.Content, new { @class = "validate reginput", placeholder = "Content" })
+            @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
+        </div>
     </div>
 
-    <div class="form-group">
-        <input class="form-control input-validation-error"
-               id="Photo"
-               type="file"
-               name="upload"
-               style="background-color: #4C90B7"
-               data-val="true"
-               data-val-required="The Photo is required." />
-
-        <span class="text-danger field-validation-error"
-              data-valmsg-for="Photo"
-              data-valmsg-replace="true">
-            <span id="Photo-error" class="">The Photo is required.</span>
-        </span>
+    <div class="row" style="height: 65px;">
+        <div class="input-field file-field col s10 offset-s1">
+            <div class="waves-effect waves-light btn btn-login">
+                Photo
+                <input type="file" name="upload">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+        </div>
     </div>
 
-    <hr />
-
-    <div class="text-center">
-        <input type="submit" class="btn btn-primary" value="Add" style="background-color: #4C90B7; border-color: #4C90B7" />
+    <div class="center-align">
+        <input type="submit" class="waves-effect waves-light btn btn-login" value="Add" />
     </div>
 }
 
