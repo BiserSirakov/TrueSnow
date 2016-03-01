@@ -2,14 +2,14 @@
 
 @foreach (var post in Model)
 {
-    <!-- Info Post Modal -->
-    <div id="postInfoModal-@post.Id" class="modal custom-modal">
-        <div class="modal-content">
-            @{ Html.RenderAction("ById", "Posts", new { id = post.Id }); }
-        </div>
-    </div>
-
     <div class="col s12 m12 l4">
+        <!-- Info Post Modal -->
+        <div id="postInfoModal-@post.Id" class="modal custom-modal">
+            <div class="modal-content">
+                @{ Html.RenderAction("ById", "Posts", new { id = post.Id }); }
+            </div>
+        </div>
+
         <article class="card feed hoverable">
             <div class="card-content intro">
                 <div class="profile-image">

@@ -22,7 +22,6 @@
                       "~/Scripts/sweetalert-dev.js",
                       "~/Scripts/site.js"));
             bundles.Add(new ScriptBundle("~/bundles/main").Include(
-                      "~/Scripts/masonry.min.js",
                       "~/Scripts/scrollTo.min.js",
                       "~/Scripts/sweetalert-dev.js",
                       "~/Scripts/main.js"));
