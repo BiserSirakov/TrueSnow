@@ -17,9 +17,11 @@
         }
 
         [Required]
+        [MaxLength(100)]
         public string Title { get; set; }
 
         [Required]
+        [MaxLength(255)]
         public string Content { get; set; }
 
         [Required]
@@ -27,6 +29,7 @@
 
         public virtual User Creator { get; set; }
 
+        [Required]
         public int PhotoId { get; set; }
 
         public virtual File Photo { get; set; }

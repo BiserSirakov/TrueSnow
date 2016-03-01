@@ -1,7 +1,6 @@
 ﻿namespace TrueSnow.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     using TrueSnow.Data.Common.Models;
 
     public class Like : BaseModel<int>

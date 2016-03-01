@@ -17,15 +17,19 @@
         }
 
         [Required]
+        [MaxLength(100)]
         public string Title { get; set; }
 
         [Required]
+        [MaxLength(500)]
         public string Description { get; set; }
 
+        [Required]
         public string CreatorId { get; set; }
 
         public virtual User Creator { get; set; }
 
+        [Required]
         public int PhotoId { get; set; }
 
         public virtual File Photo { get; set; }

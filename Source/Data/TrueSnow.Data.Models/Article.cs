@@ -17,9 +17,11 @@
         }
 
         [Required]
+        [MaxLength(100)]
         public string Title { get; set; }
 
         [Required]
+        [MaxLength(5000)]
         public string Content { get; set; }
 
         [Required]
@@ -29,6 +31,7 @@
 
         public int? PhotoId { get; set; }
 
+        [Required]
         public virtual File Photo { get; set; }
 
         public string VideoUrl { get; set; }
