@@ -19,7 +19,7 @@
     <div id="ts-container" class="dashboard-page">
         <nav id="main-header" class="light-blue lighten-2">
             <div class="nav-wrapper">
-                <a href="/Home" class="brand-logo">True Snow</a>
+                <a href="/Home" class="brand-logo">true snow</a>
                 <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 
                 <ul id="right-menu" class="right hide-on-med-and-down">
@@ -34,10 +34,14 @@
                 </ul>
 
                 <ul class="side-nav" id="mobile">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
+                    <li>
+                        @{ Html.RenderAction("GetSearch", "Search", new { area = "" }); }
+                    </li>
+                    <li><a class="waves-effect waves-light btn modal-trigger" href="#addPostModal">Post</a></li>
+                    <li><a href="#"><i data-position="bottom" data-delay="50" data-tooltip="Messages" class="material-icons tooltipped">chat_bubble</i></a></li>
+                    <li><a href="#"><i data-position="bottom" data-delay="50" data-tooltip="Notifications" class="material-icons tooltipped">notifications</i></a></li>
+                    @{ Html.RenderAction("GetUser", "Profile", new { area = "" }); }
+                    <li><a id="btnLogout" href="/"><i data-position="bottom" data-delay="50" data-tooltip="Logout" class="material-icons tooltipped">power_settings_new</i></a></li>
                 </ul>
             </div>
         </nav>

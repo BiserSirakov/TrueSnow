@@ -1,12 +1,13 @@
-﻿<div id="dashboard-cover" class="custom-parallax"></div>
-
+﻿<div class="parallax-container">
+    <div class="parallax"><img src="~/Content/Images/cover5.jpg"></div>
+</div>
 <section id="dashboard-content">
     <div id="dashboard-content-tabs" class="tabs-menu z-depth-1">
         <div class="container">
             <div class="row">
                 <div class="col s12">
                     <ul class="tabs">
-                        <li class="tab"><a href="#stream">stream</a></li>
+                        <li class="tab"><a href="#timeline">timeline</a></li>
                         <li class="tab"><a href="#discover">discover</a></li>
                     </ul>
                 </div>
@@ -16,7 +17,7 @@
     <div id="dashboard-content-wrapper" class="tabs-content" style="padding-left: 15px; padding-right: 15px;">
         <div class="container">
             <div class="row">
-                <div id="stream">
+                <div id="timeline">
                     @{ Html.RenderAction("Index", "Posts"); }
                 </div>
                 <div id="discover">

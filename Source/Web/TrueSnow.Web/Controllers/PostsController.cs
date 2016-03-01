@@ -53,7 +53,7 @@
                 PostLikedByCurrentUser = like != null
             };
 
-            return this.View("ById", model);
+            return this.PartialView("ById", model);
         }
 
         public ActionResult ByUserId(string userId)

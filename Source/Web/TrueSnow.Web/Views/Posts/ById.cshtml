@@ -1,77 +1,62 @@
 ﻿@model PostByIdViewModel
 
-@{
-    Layout = null;
-}
-
-<div class="card-content intro">
-    <div class="profile-image">
-        <img src="~/File/@Model.PostViewModel.Creator.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" />
-    </div>
-    <div class="feed-info">
-        <div class="user-name"><a href="~/Profile/@Model.PostViewModel.Creator.Id">@Model.PostViewModel.Creator.FirstName @Model.PostViewModel.Creator.LastName</a></div>
-        <div>
-            <i class="material-icons">date_range</i>
-            <span class="feed-date"> @Model.PostViewModel.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US"))</span>
+<article class="card feed">
+    <div class="card-content intro">
+        <div class="profile-image">
+            <img src="~/File/@Model.PostViewModel.Creator.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" />
         </div>
-    </div>
-    <div class="clear"></div>
-</div>
-
-<div class="card-content">
-    <p>@Model.PostViewModel.Title</p>
-</div>
-
-<div class="card-image">
-    <img src="~/File/@Model.PostViewModel.Photo.Id" alt="photo" />
-</div>
-
-@{ Html.RenderAction("ByPost", "Comments", new { id = Model.PostViewModel.Id }); }
-
-@*<img src="~/File/@Model.PostViewModel.Creator.Files.First(x => x.FileType == FileType.Avatar).Id" class="circle" />
-<h4 style="margin: 0; padding-top: 3px;"><a style="color: white; margin-left: 7px;" href="~/Profile/@Model.PostViewModel.Creator.Id">@Model.PostViewModel.Creator.FirstName @Model.PostViewModel.Creator.LastName</a></h4>
-<h4 style="margin: 0; float: right; margin-right: 20px;">
-    <span style="color: white; font-size: 15px; margin-left: 141px; margin-top: 13px;"><span class="glyphicon glyphicon-comment"></span><span class="commentsCount-@Model.PostViewModel.Id"> @Model.PostViewModel.CommentsCount</span></span>
-    <span style="color: white; font-size: 15px; margin-left: 12px; margin-top: 13px;"><span class="glyphicon glyphicon-heart"></span><span class="likesCount-@Model.PostViewModel.Id"> @Model.PostViewModel.Likes</span></span>
-    <span style="color: white; font-size: 15px; margin-left: 12px; margin-top: 13px;"><span class="glyphicon glyphicon-calendar"></span> @Model.PostViewModel.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US"))</span>
-</h4>
-<h4 class="modal-title pull-left text-center" id="postInfoModalLabel" style="color: white; font-size: 25px; margin-left: 7px;">
-    @Model.PostViewModel.Title
-</h4>
-
-<div modal-data-id="@Model.PostViewModel.Id" style="padding: 0; margin-top: -1px;">
-    <img src="~/File/@Model.PostViewModel.Photo.Id" alt="photo" class="img-responsive" />
-    <p style="margin: 15px;">@Model.PostViewModel.Content</p>
-
-    @using (Html.BeginForm("Create", "Comments", FormMethod.Post, new { @class = "form-horizontal createCommentForm", role = "form", style = "padding: 1px 15px;" }))
-    {
-        @Html.AntiForgeryToken()
-        <input name="PostId" type="hidden" value="@Model.PostViewModel.Id">
-
-        <div class="row">
-            <div class="col-md-2">
-                @if (this.Request.IsAuthenticated)
-                {
-                    if (Model.PostLikedByCurrentUser)
-                    {
-                        <span data-toggle="tooltip" data-placement="top" title="Unlike" data-original-title="Unlike" data-id="@Model.PostViewModel.Id" data-action="unlike" class="glyphicon glyphicon-heart" style="font-size: 35px; color: red;"></span>
-                        <span data-toggle="tooltip" data-placement="top" title="Like" data-original-title="Like" data-id="@Model.PostViewModel.Id" data-action="like" class="glyphicon glyphicon-heart-empty" style="font-size: 35px; display: none; color: red;"></span>
-                    }
-                    else
-                    {
-                        <span data-toggle="tooltip" data-placement="top" title="Like" data-original-title="Like" data-id="@Model.PostViewModel.Id" data-action="like" class="glyphicon glyphicon-heart-empty" style="font-size: 35px; color: red;"></span>
-                        <span data-toggle="tooltip" data-placement="top" title="Unlike" data-original-title="Unlike" data-id="@Model.PostViewModel.Id" data-action="unlike" class="glyphicon glyphicon-heart" style="font-size: 35px; display: none; color: red;"></span>
-                    }
-                }
+        <div class="feed-info">
+            <div class="user-name"><a href="~/Profile/@Model.PostViewModel.Creator.Id">@Model.PostViewModel.Creator.FirstName @Model.PostViewModel.Creator.LastName</a></div>
+            <div>
+                <i class="material-icons">date_range</i>
+                <span class="feed-date"> @Model.PostViewModel.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US"))</span>
             </div>
-            <div class="col-md-10" style="margin-left: -28px;">
-                <div class="form-group" style="float: left; width: 100%;">
-                    <input class="form-control" data-val="true" data-val-required="The Content field is required." id="Content" name="Content" placeholder="Comment" type="text" value="">
+        </div>
+        <p>
+            <i class="material-icons" style="font-size: 30px; color: red;">favorite</i>
+            <span class="likesCount-@Model.PostViewModel.Id">@Model.PostViewModel.Likes</span>
+        </p>
+            
+        <div class="clear"></div>
+    </div>
+
+    <div class="card-content">
+        <p>@Model.PostViewModel.Title</p>
+    </div>
+
+    <div class="card-image">
+        <img src="~/File/@Model.PostViewModel.Photo.Id" alt="photo" />
+    </div>
+
+    <div class="card-action">
+        @using (Html.BeginForm("Create", "Comments", FormMethod.Post, new { @class = "createCommentForm", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <input name="PostId" type="hidden" value="@Model.PostViewModel.Id">
+
+            <div class="row">
+                <div class="col l2" style="padding-left: 22px;">
+                    @if (this.Request.IsAuthenticated)
+                    {
+                        if (Model.PostLikedByCurrentUser)
+                        {
+                            <span data-id="@Model.PostViewModel.Id" data-action="like" style="display: none;"><i data-position="top" data-delay="50" data-tooltip="Like" class="material-icons tooltipped" style="font-size: 40px; color: red;">favorite_border</i></span>
+                            <span data-id="@Model.PostViewModel.Id" data-action="unlike"><i data-position="top" data-delay="50" data-tooltip="Unlike" class="material-icons tooltipped" style="font-size: 40px; color: red;">favorite</i></span>
+                        }
+                        else
+                        {
+                            <span data-id="@Model.PostViewModel.Id" data-action="unlike" style="display: none;"><i data-position="top" data-delay="50" data-tooltip="Unlike" class="material-icons tooltipped" style="font-size: 40px; color: red;">favorite</i></span>
+                            <span data-id="@Model.PostViewModel.Id" data-action="like"><i data-position="top" data-delay="50" data-tooltip="Like" class="material-icons tooltipped" style="font-size: 40px; color: red;">favorite_border</i></span>
+                        }
+                    }
                 </div>
-                <button type="submit" class="hidden btn btn-primary"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                <div class="input-field col l10" style="margin-top: -10px;">
+                    <input class="form-control" data-val="true" data-val-required="The Content field is required." id="Content" name="Content" placeholder="Comment" type="text" value="">
+                    <button type="submit" class="hide"></button>
+                </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 
     @{ Html.RenderAction("ByPost", "Comments", new { id = Model.PostViewModel.Id }); }
-</div>*@
+</article>

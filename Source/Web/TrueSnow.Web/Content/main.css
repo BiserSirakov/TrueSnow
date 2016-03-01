@@ -54,7 +54,7 @@ img {
 ul.tabs {
     height: 60px;
     line-height: 60px;
-    width: 101%;
+    width: 101% !important;
 }
 
     ul.tabs li.tab {
@@ -309,13 +309,6 @@ ul.tabs {
         margin-top: 30px;
         padding-bottom: 10px;
     }
-
-#dashboard-cover {
-    width: 100%;
-    height: 200px;
-    background: url('Images/cover5.jpg') center center no-repeat fixed;
-    background-size: cover;
-}
 
 #dashboard-content-wrapper .card span {
     margin: 0 3px;
@@ -574,3 +567,26 @@ a {
         font-weight: 900;
         color: #4fc3f7;
     }
+
+.modal.custom-modal {
+    max-height: 80%; 
+    width: 30%;
+    background: none; 
+    border: none; 
+    box-shadow: none;
+}
+
+@media only screen and (max-width: 992px){
+    .modal {
+        width: 100%;
+    }
+}
+
+span[data-action="like"], span[data-action="unlike"] {
+    cursor: pointer;
+}
+
+.parallax-container {
+    height: 200px;
+}
+
