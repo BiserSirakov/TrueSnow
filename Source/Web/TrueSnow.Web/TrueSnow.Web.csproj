@@ -435,7 +435,6 @@
     <Content Include="Views\Follows\Follow.cshtml" />
     <Content Include="Views\Messages\ByUser.cshtml" />
     <Content Include="Views\Posts\ById.cshtml" />
-    <Content Include="Views\Posts\ByUser.cshtml" />
     <Content Include="Views\Posts\Create.cshtml" />
     <Content Include="Views\Posts\Index.cshtml" />
     <Content Include="Views\Profile\Follow.cshtml" />

@@ -1,17 +1,18 @@
 ﻿@model  IEnumerable<CommentViewModel>
 
-<hr style="margin: 10px 35px;" />
+<div style="height: 60px;"></div>
 @foreach (var comment in Model)
 {
-    <div class="row">
-        <div class="col-md-2">
-            <img src="~/File/@comment.Creator.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" class="img-responsive img-circle" style="width: 60px; float: right" />
+    <div class="row" style="padding: 20px;">
+        <div class="col s2">
+            <img src="~/File/@comment.Creator.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" class="circle responsive-img" style="width: 60px; vertical-align: top;" />
         </div>
-        <div class="col-md-10" style="margin-left: -20px; padding-top: 8px;">
+        <div class="col s10" style="margin-left: -20px;">
             <a class="a-profile" href="/Profile/@comment.Creator.Id"><b>@comment.Creator.FirstName @comment.Creator.LastName</b></a>
             <small>@comment.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US"))</small>
-            <p style="overflow: auto">@comment.Content</p>
+            <div>
+                @comment.Content
+            </div>
         </div>
     </div>
-    <hr style="margin: 10px 35px;" />
 }

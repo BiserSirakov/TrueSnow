@@ -2,7 +2,7 @@
 
 @foreach (var post in Model)
 {
-    <div class="col s12 m12 l4">
+    <div class="col s12 m12 l4 post">
         <!-- Info Post Modal -->
         <div id="postInfoModal-@post.Id" class="modal custom-modal">
             <div class="modal-content">
@@ -17,8 +17,10 @@
                 </div>
                 <div class="feed-info">
                     <div class="user-name"><a href="~/Profile/@post.Creator.Id">@post.Creator.FirstName @post.Creator.LastName</a></div>
-                    <div>
+                    <div class="left">
                         <i class="material-icons">date_range</i>
+                    </div>
+                    <div>
                         <span class="feed-date"> @post.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US"))</span>
                     </div>
                 </div>
@@ -30,11 +32,16 @@
             </div>
 
             <div class="card-image">
-                <img src="~/File/@post.Photo.Id" alt="photo" />
+                <a class="modal-trigger" href='#postInfoModal-@post.Id'>
+                    <img src="~/File/@post.Photo.Id" alt="photo" />
+                </a>
             </div>
 
-            <div class="card-action">
-                <a class="waves-effect waves-grey main modal-trigger" href='#postInfoModal-@post.Id'>EXPLORE</a>
+            <div class="card-action" style="color: #4fc3f7">
+                <i class="material-icons" style="font-size: 24px; vertical-align: middle;">favorite</i>
+                <span class="likesCount-@post.Id" style="font-size: 18px;">@post.Likes</span>
+                <i class="material-icons" style="font-size: 24px; vertical-align: middle; margin-left: 20px;">chat_bubble</i>
+                <span class="commentsCount-@post.Id" style="font-size: 18px;">@post.CommentsCount</span>
             </div>
         </article>
     </div>

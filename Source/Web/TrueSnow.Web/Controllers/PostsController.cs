@@ -63,8 +63,18 @@
                 .To<PostViewModel>()
                 .ToList();
 
-            return this.PartialView("ByUser", postsViewModel);
+            return this.PartialView("Index", postsViewModel);
         }
+
+        //public ActionResult Discover()
+        //{
+        //    var postsViewModel = this.posts
+        //        .GetAll()
+        //        .To<PostViewModel>()
+        //        .ToList();
+
+        //    return this.PartialView("Index", postsViewModel);
+        //}
 
         public ActionResult GetCreate()
         {

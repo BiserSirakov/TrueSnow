@@ -1,6 +1,6 @@
 ﻿@model PostByIdViewModel
 
-<article class="card feed">
+<article id="post-@Model.PostViewModel.Id" class="card feed">
     <div class="card-content intro">
         <div class="profile-image">
             <img src="~/File/@Model.PostViewModel.Creator.Files.First(x => x.FileType == FileType.Avatar).Id" alt="avatar" />
@@ -12,11 +12,7 @@
                 <span class="feed-date"> @Model.PostViewModel.CreatedOn.ToString("dd MMM HH:mm", CultureInfo.CreateSpecificCulture("en-US"))</span>
             </div>
         </div>
-        <p>
-            <i class="material-icons" style="font-size: 30px; color: red;">favorite</i>
-            <span class="likesCount-@Model.PostViewModel.Id">@Model.PostViewModel.Likes</span>
-        </p>
-            
+
         <div class="clear"></div>
     </div>
 
@@ -28,35 +24,39 @@
         <img src="~/File/@Model.PostViewModel.Photo.Id" alt="photo" />
     </div>
 
-    <div class="card-action">
-        @using (Html.BeginForm("Create", "Comments", FormMethod.Post, new { @class = "createCommentForm", role = "form" }))
-        {
-            @Html.AntiForgeryToken()
-            <input name="PostId" type="hidden" value="@Model.PostViewModel.Id">
-
-            <div class="row">
-                <div class="col l2" style="padding-left: 22px;">
-                    @if (this.Request.IsAuthenticated)
-                    {
-                        if (Model.PostLikedByCurrentUser)
-                        {
-                            <span data-id="@Model.PostViewModel.Id" data-action="like" style="display: none;"><i data-position="top" data-delay="50" data-tooltip="Like" class="material-icons tooltipped" style="font-size: 40px; color: red;">favorite_border</i></span>
-                            <span data-id="@Model.PostViewModel.Id" data-action="unlike"><i data-position="top" data-delay="50" data-tooltip="Unlike" class="material-icons tooltipped" style="font-size: 40px; color: red;">favorite</i></span>
-                        }
-                        else
-                        {
-                            <span data-id="@Model.PostViewModel.Id" data-action="unlike" style="display: none;"><i data-position="top" data-delay="50" data-tooltip="Unlike" class="material-icons tooltipped" style="font-size: 40px; color: red;">favorite</i></span>
-                            <span data-id="@Model.PostViewModel.Id" data-action="like"><i data-position="top" data-delay="50" data-tooltip="Like" class="material-icons tooltipped" style="font-size: 40px; color: red;">favorite_border</i></span>
-                        }
-                    }
-                </div>
-                <div class="input-field col l10" style="margin-top: -10px;">
-                    <input class="form-control" data-val="true" data-val-required="The Content field is required." id="Content" name="Content" placeholder="Comment" type="text" value="">
-                    <button type="submit" class="hide"></button>
-                </div>
-            </div>
-        }
+    <div class="card-action" style="color: #4fc3f7">
+        <i class="material-icons" style="font-size: 24px; vertical-align: middle;">favorite</i>
+        <span class="likesCount-@Model.PostViewModel.Id" style="font-size: 18px;">@Model.PostViewModel.Likes</span>
+        <i class="material-icons" style="font-size: 24px; vertical-align: middle; margin-left: 20px;">chat_bubble</i>
+        <span class="commentsCount-@Model.PostViewModel.Id" style="font-size: 18px;">@Model.PostViewModel.CommentsCount</span>
     </div>
+    <div style="height: 20px;"></div>
+    @using (Html.BeginForm("Create", "Comments", FormMethod.Post, new { @class = "createCommentForm", role = "form", style = "margin: 0 15px;" }))
+    {
+        @Html.AntiForgeryToken()
+        <input name="PostId" type="hidden" value="@Model.PostViewModel.Id">
+
+        <div class="left" style="margin-right: 20px;">
+            @if (this.Request.IsAuthenticated)
+                {
+                    if (Model.PostLikedByCurrentUser)
+                    {
+                    <span data-id="@Model.PostViewModel.Id" data-action="like" style="display: none;"><i data-position="left" data-delay="50" data-tooltip="Like" class="material-icons tooltipped" style="font-size: 40px; color: red;">favorite_border</i></span>
+                    <span data-id="@Model.PostViewModel.Id" data-action="unlike"><i data-position="left" data-delay="50" data-tooltip="Unlike" class="material-icons tooltipped" style="font-size: 40px; color: red;">favorite</i></span>
+                }
+                else
+                {
+                    <span data-id="@Model.PostViewModel.Id" data-action="unlike" style="display: none;"><i data-position="left" data-delay="50" data-tooltip="Unlike" class="material-icons tooltipped" style="font-size: 40px; color: red;">favorite</i></span>
+                    <span data-id="@Model.PostViewModel.Id" data-action="like"><i data-position="left" data-delay="50" data-tooltip="Like" class="material-icons tooltipped" style="font-size: 40px; color: red;">favorite_border</i></span>
+                }
+            }
+        </div>
+
+        <div class="input-field left" style="margin-top: -10px; width: 85%;">
+            <input class="form-control" data-val="true" data-val-required="The Content field is required." id="Content" name="Content" placeholder="Comment" type="text" value="">
+            <button type="submit" class="hide"></button>
+        </div>
+    }
 
     @{ Html.RenderAction("ByPost", "Comments", new { id = Model.PostViewModel.Id }); }
 </article>

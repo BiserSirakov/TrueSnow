@@ -7,30 +7,27 @@
             type: this.method,
             data: $(this).serialize(),
             success: function (data) {
-                var modal = $('div[modal-data-id="' + data.PostId + '"]');
+                var modal = $('article[id="post-' + data.PostId + '"]');
 
-                var row = $("<div></div>").addClass("row");
+                var row = $('<div style="padding: 20px;"></div>').addClass("row");
 
-                var col2 = $("<div></div>").addClass("col-md-2");
-                var img = $('<img alt="avatar" class="img-responsive img-circle" style="width: 60px; float: right" />')
+                var col2 = $("<div></div>").addClass("col s2");
+                var img = $('<img alt="avatar" class="circle responsive-img" style="width: 60px; vertical-align: top;" />')
                     .attr("src", "/File/" + data.CreatorAvatarId);
                 col2.append(img);
 
-                var col10 = $('<div style="margin-left: -20px; padding-top: 8px;"></div>').addClass("col-md-10");
+                var col10 = $('<div style="margin-left: -20px;"></div>').addClass("col s10");
                 var a = $("<a></a>").addClass("a-profile").attr("href", "/Profile/" + data.CreatorId).html("<b>" + data.CreatorName + "</b>");
                 col10.append(a);
                 var small = $("<small></small>").html(" " + data.CreatedOn);
                 col10.append(small);
-                var p = $('<p style="overflow: auto"></p>').html(data.Content);
-                col10.append(p);
+                var content = $('<div></div>').html(data.Content);
+                col10.append(content);
 
                 row.append(col2);
                 row.append(col10);
-
-                var hr = $('<hr style="margin: 10px 35px;" />');
-
+                
                 modal.append(row);
-                modal.append(hr);
 
                 $('.commentsCount-' + data.PostId).html(" " + data.CommentsCount);
                 $('.form-control').val('');
@@ -147,12 +144,12 @@
 $(window).load(function () {
     if ($('#timeline').length > 0) {
         var container = document.querySelector('#timeline');
-        var msnry = new Masonry(container, { itemSelector: '.col' });
+        var msnry = new Masonry(container, { itemSelector: '.post' });
     }
 
     if ($('#posts').length > 0) {
         var container = document.querySelector('#posts');
-        var msnry = new Masonry(container, { itemSelector: '.col' });
+        var msnry = new Masonry(container, { itemSelector: '.post' });
     }
 
     $('.tabs-content').addClass('moved');
