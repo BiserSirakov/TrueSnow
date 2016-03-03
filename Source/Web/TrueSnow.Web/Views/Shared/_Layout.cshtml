@@ -10,7 +10,7 @@
 
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
 
     @Styles.Render("~/Content/main")
@@ -27,7 +27,7 @@
                         @{ Html.RenderAction("GetSearch", "Search", new { area = "" }); }
                     </li>
                     <li><a class="waves-effect waves-light btn modal-trigger" href="#addPostModal">Post</a></li>
-                    <li><a href="#"><i data-position="bottom" data-delay="50" data-tooltip="Messages" class="material-icons tooltipped">chat_bubble</i></a></li>
+                    <li><a href="/Messages"><i data-position="bottom" data-delay="50" data-tooltip="Messages" class="material-icons tooltipped">chat_bubble</i></a></li>
                     <li><a href="#"><i data-position="bottom" data-delay="50" data-tooltip="Notifications" class="material-icons tooltipped">notifications</i></a></li>
                     @{ Html.RenderAction("GetUser", "Profile", new { area = "" }); }
                     <li><a id="btnLogout" href="/"><i data-position="bottom" data-delay="50" data-tooltip="Logout" class="material-icons tooltipped">power_settings_new</i></a></li>
@@ -47,7 +47,7 @@
         </nav>
 
         <div class="parallax-container">
-            <div class="parallax"><img src="~/Content/Images/cover5.jpg"></div>
+            <div class="parallax"></div>
         </div>
 
         @RenderBody()
@@ -81,5 +81,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
     @Scripts.Render("~/bundles/main")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

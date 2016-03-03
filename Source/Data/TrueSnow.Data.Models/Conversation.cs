@@ -1,6 +1,5 @@
 ﻿namespace TrueSnow.Data.Models
 {
-    using System;
     using TrueSnow.Data.Common.Models;
 
     public class Conversation : BaseModel<int>

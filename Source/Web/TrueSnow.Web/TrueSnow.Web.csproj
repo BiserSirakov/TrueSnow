@@ -258,6 +258,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\custom.min.css" />
+    <Content Include="Content\dropify.min.css" />
     <Content Include="Content\fileinput.min.css" />
     <Content Include="Content\Images\bg.jpg" />
     <Content Include="Content\Images\cover.jpg" />
@@ -318,6 +319,8 @@
     <Content Include="Content\KendoUI\textures\transparency.png" />
     <Content Include="Content\KendoUI\textures\transtexture.png" />
     <Content Include="Content\profile.html" />
+    <Content Include="fonts\dropify.svg" />
+    <Content Include="Scripts\dropify.min.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\masonry.min.js" />
     <Content Include="Content\profile.css" />
@@ -385,9 +388,15 @@
     <Content Include="fonts\roboto\Roboto-Thin.ttf" />
     <Content Include="fonts\roboto\Roboto-Thin.woff" />
     <Content Include="fonts\roboto\Roboto-Thin.woff2" />
+    <Content Include="fonts\dropify.eot" />
+    <Content Include="fonts\dropify.ttf" />
+    <Content Include="fonts\dropify.woff" />
     <None Include="Properties\PublishProfiles\icn.pubxml" />
     <None Include="Properties\PublishProfiles\truesnow - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\truesnow - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\truesnow.eu - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\truesnow.eu - Web Deploy %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\truesnow.eu - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -434,7 +443,7 @@
     <Content Include="Views\Events\GetLatest.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Follows\Follow.cshtml" />
-    <Content Include="Views\Messages\ByUser.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Posts\ById.cshtml" />
     <Content Include="Views\Posts\Create.cshtml" />
     <Content Include="Views\Posts\Index.cshtml" />

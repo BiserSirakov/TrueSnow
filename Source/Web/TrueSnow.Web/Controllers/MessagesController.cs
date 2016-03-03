@@ -4,7 +4,7 @@
 
     public class MessagesController : BaseController
     {
-        public ActionResult ByUser()
+        public ActionResult Index()
         {
             return this.View();
         }

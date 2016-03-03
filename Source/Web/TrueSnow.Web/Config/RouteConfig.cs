@@ -45,6 +45,11 @@
                 defaults: new { controller = "Search", action = "Search" });
 
             routes.MapRoute(
+                name: "Messages",
+                url: "Messages",
+                defaults: new { controller = "Messages", action = "Index" });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional },

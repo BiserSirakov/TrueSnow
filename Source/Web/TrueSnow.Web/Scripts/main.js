@@ -67,6 +67,16 @@
         $('span[data-action="like"][data-id="' + id + '"]').show();
     });
 
+    $('.dropify').dropify({
+        messages: {
+            'default': 'Drag and drop a file here or click <br> Uploading avatar is required',
+            'replace': 'Drag and drop or click to replace',
+            'remove': 'Remove',
+            'error': 'Bad format.',
+            'imageFormat': 'The image format is not allowed ({{ value }} only).'
+        }
+    });
+
     $('.parallax').parallax();
 
     $('.tooltipped').tooltip({ delay: 50 });

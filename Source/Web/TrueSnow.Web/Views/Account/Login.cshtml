@@ -27,7 +27,6 @@
             @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", style = "padding-bottom: 10px" }))
             {
                 @Html.AntiForgeryToken()
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                 <h4 class="center-align" style="color: #4C90B7; margin: 10px;">Login</h4>
                 <div class="center-align">
@@ -36,17 +35,21 @@
 
                 <div class="row">
                     <div class="input-field col s10 offset-s1">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "validate", placeholder = "Email" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(m => m.Email, new { @class = "validate", required = "true", id = "email" })
+                        <label for="email">Email</label>
+                        @Html.ValidationMessageFor(m => m.Email, "", new { style = "color: red" })
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="input-field col s10 offset-s1">
-                        @Html.PasswordFor(m => m.Password, new { @class = "validate", placeholder = "Password" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        @Html.PasswordFor(m => m.Password, new { @class = "validate", required = "true", id = "pass" })
+                        <label for="pass">Password</label>
+                        @Html.ValidationMessageFor(m => m.Password, "", new { style = "color: red" })
                     </div>
                 </div>
+
+                @Html.ValidationSummary(true, "", new { style = "color: red; text-align: center;" })    
 
                 <div class="center-align">
                     <button type="submit" class="waves-effect waves-light btn btn-login">Login</button>
@@ -54,10 +57,6 @@
                         <span>New? </span><a style="font-weight:bold;" class="a-inLogin" href="/Register">Register now!</a>
                     </div>
                 </div>
-            }
-
-            @section Scripts {
-                @Scripts.Render("~/bundles/jqueryval")
             }
         </div>
 
@@ -72,5 +71,6 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     @Scripts.Render("~/bundles/main")
+    @Scripts.Render("~/bundles/jqueryval")
 </body>
 </html>

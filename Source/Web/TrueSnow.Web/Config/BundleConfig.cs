@@ -23,6 +23,7 @@
                       "~/Scripts/site.js"));
             bundles.Add(new ScriptBundle("~/bundles/main").Include(
                       "~/Scripts/scrollTo.min.js",
+                      "~/Scripts/dropify.min.js",
                       "~/Scripts/sweetalert-dev.js",
                       "~/Scripts/main.js"));
         }
@@ -39,7 +40,10 @@
                       "~/Content/KendoUI/kendo.common.min.css",
                       "~/Content/KendoUI/kendo.office365.min.css"));
 
-            bundles.Add(new StyleBundle("~/Content/main").Include("~/Content/main.css", "~/Content/sweetalert.css"));
+            bundles.Add(new StyleBundle("~/Content/main").Include(
+                      "~/Content/main.css",
+                      "~/Content/sweetalert.css",
+                      "~/Content/dropify.min.css"));
         }
     }
 }
