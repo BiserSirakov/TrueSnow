@@ -12,7 +12,7 @@
     public class TrueSnowDbContext : IdentityDbContext<User>
     {
         public TrueSnowDbContext()
-            : base("DefaultConnection_DatabasePublish", throwIfV1Schema: false)
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 

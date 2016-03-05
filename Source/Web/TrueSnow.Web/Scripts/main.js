@@ -1,4 +1,9 @@
 ﻿$(document).ready(function () {
+    setTimeout(function () {
+        $('body').addClass('loaded');
+        $('h1').css('color', '#222222');
+    }, 1000);
+
     $('.createCommentForm').on('submit', function (e) {
         e.preventDefault();
 
@@ -69,7 +74,7 @@
 
     $('.dropify').dropify({
         messages: {
-            'default': 'Drag and drop a file here or click <br> Uploading avatar is required',
+            'default': '<b>Drag and drop a file here or click <br> Uploading is required</b>',
             'replace': 'Drag and drop or click to replace',
             'remove': 'Remove',
             'error': 'Bad format.',

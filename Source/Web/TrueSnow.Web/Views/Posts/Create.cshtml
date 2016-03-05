@@ -6,19 +6,19 @@
 
     <div class="row">
         <div class="input-field col s10 offset-s1">
-            @Html.TextBoxFor(m => m.Title, new { @class = "validate reginput", placeholder = "Title" })
-            @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.Title, new { @class = "validate reginput", placeholder = "Title", required = "true" })
+            @Html.ValidationMessageFor(m => m.Title, "", new { style = "color: red" })
         </div>
     </div>
 
     <div class="row">
         <div class="input-field col s10 offset-s1">
-            @Html.TextBoxFor(m => m.Content, new { @class = "validate reginput", placeholder = "Content" })
-            @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.Content, new { @class = "validate reginput", placeholder = "Content", required = "true" })
+            @Html.ValidationMessageFor(m => m.Content, "", new { style = "color: red" })
         </div>
     </div>
 
-    <div class="row" style="height: 65px;">
+    @*<div class="row" style="height: 65px;">
         <div class="input-field file-field col s10 offset-s1">
             <div class="waves-effect waves-light btn btn-login">
                 Photo
@@ -28,7 +28,13 @@
                 <input class="file-path validate" type="text">
             </div>
         </div>
-    </div>
+    </div>*@
+
+    <input class="dropify"
+           data-height="100"
+           name="upload"
+           type="file"
+           required>
 
     <div class="center-align" style="margin-bottom: 15px;">
         <button type="submit" class="waves-effect waves-light btn btn-login">Add</button>

@@ -22,6 +22,12 @@
     @Styles.Render("~/Content/main")
 </head>
 <body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
     <div id="login-container">
         <div class="panel z-depth-4">
             @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", style = "padding-bottom: 10px" }))
@@ -43,7 +49,7 @@
 
                 <div class="row">
                     <div class="input-field col s10 offset-s1">
-                        @Html.PasswordFor(m => m.Password, new { @class = "validate", required = "true", id = "pass" })
+                        @Html.PasswordFor(m => m.Password, new { @class = "validate", required = "true", id = "pass", autofocus = "autofocus" })
                         <label for="pass">Password</label>
                         @Html.ValidationMessageFor(m => m.Password, "", new { style = "color: red" })
                     </div>
